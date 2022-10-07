@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clickButton">버튼을 눌러주세요</button>
+    <button id =button> 버튼을 눌러주세요(자바스크립트) </button>
+    <a href="" id="">클릭하세요 </a>
+    
+    <ul id ="list">
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+    </ul>
+
+    <!-- 2 -->
+    <p id="changeText">익명함수로 바꿀 p 태그입니다.</p>
+
+
+
+    <script>
+        // 객체를 제외하고 메소드,이름,함수는 동일하게 들어감 
+        // for 문을 통해서 이벤트를 넣어줄 수 있음 
+        // 객체가 있어야지 객체를 통해서 이벤트를 넣을 수 있음
+        const button = document.querySelector("#button");
+        
+        button.addEventListener("click", clickButton);
+        // 값을 받아올 때에는 함수로 감싸서 해야 함 
+        // 이벤트리스너를 사용할 때 현재 들어가는 내용이 다른 곳에 저장이 됨 
+        // 아래 event 함수를 위로 넣어서 적용하면 이러한 모양 
+        button.addEventListener("click", function(event){
+            console.dir(event, 1)
+            event.target.textContent = "값을 바꿉니다."
+        });
+        
+
+        // 이벤트 객체 확인
+        // id값이 정해지지 않았을 때는 id값을 중심으로 이벤트 객체를 사용해 값을 변경
+        // 현재 클릭한 이벤트의 타겟으로 들어와서 값을 클릭함 > ul아이디를 통해서 이벤트를 걸어줌 
+        // 값이 없을 때 event 객체를 들고옴
+        // clickButton이 event에 들어옴 > 값을 받아오면 이대로 실행됨 
+        function clickButton(event, count) {
+            //type발생한 이벤트 타입 
+            //target 이벤트 타깃
+            //preventDefault 이벤트 타깃 / 이벤트 기본행동 취소
+            console.log(count); // 1 
+            console.dir(event);
+            event.target.textContent = "값을 바꿉니다.";
+            alert("실행되었습니다");
+        }
+
+        // 특정 태그는 기본 이벤트가 존재함 
+        // a태그에 걸린 이벤트의 기본행동 취소 
+        // 바꿨던 컬러가 사라지고 기본 색으로  돌아옴
+        // 현재 클릭한 타겟의 객체를 들고올 수 있음 
+        const list = document.querySelector("#list")
+        list.addEventListener("click", changeColor);
+        
+        function changeColor(event){
+            // a태그에 걸린 새로고침 취소
+            event.preventDefalut();
+            event.target.style.color = "black";
+        }
+
+        // list와 같이 여러개 요소에 동일한 이벤트리스너 붙이기(for문 사용)
+        // ul을 들고와서, ul.node를 통해서 안에 있는 내용을 확인 
+        // ul.children[]을 통해서 접근하여 (동일한 돔 객체기 때문에) 이벤트리스너 붙이기 
+        for(let i = 0; i<list.children.length; i++){
+            list.children[i].addEventListener("click", clickButton);
+            // 각각의 요소에 이벤트가 들어가 있는 것을 볼 수 있음 
+        }
+
+        // 이벤트리스너와 그 안에 들어가는 함수 
+        // 1. 만들어진 함수의 함수 이름 
+
+        // 2. 한번만 사용하기 위한 익명함수
+        // document.querySelector("#chagnetext").addEventListener(
+        //     "mouseenter",
+        //     function(e) { // 익명함수 changetext에서만 실행가능 
+        //         e.target.textContent = "마우스가 올라왔습니다."
+        //     }
+        // );
+
+        // 3. 만들어진 함수에 인수를 추가적으로 넣기 위해 익명함수로 감싼 함수 
+        document.querySelector("#changetext").addEventListener(
+            "click", 
+            function(e) {
+                changeSize(e,25)                
+            }
+        );
+        
+        function changeSize(e,size) {
+            console.log(e.target.style.fontSize); // 처음 사이즈 확인 
+            e.target.style.fontSize = size + "px";
+        }
+        
+    </script>
+</body>
+</html>

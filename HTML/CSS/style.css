@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/* *는 모든 html 요소를 선택함 */
+/* css는 구문이 끝나면 ;을 입력해야 함 */
+* {
+    border:1px, solid red;
+}
+
+h11 {
+    border:1px, solid salmon;
+}
+
+ul > li {
+    /* 자손까지 선택하는 것이 아니라 직계자식인 li만 적용하겠다. */
+    border:1px solid blue;
+}

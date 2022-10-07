@@ -1,0 +1,53 @@
+.f-container {
+    display:flex;
+    width:100%;
+    background-color:dimgray;
+    border : 3px solid dimgray;
+}
+
+.f-item {
+    display:inline-block; 
+    width:100px;
+    height: 100px;
+    background-color: blanchedalmond;
+}
+
+/* 수평방향 정렬 */
+.f-align{
+    justify-content: space-between;
+}
+
+.f-aligne{justify-content: space-around;}
+
+.height {
+    height: 250px;
+}
+
+
+.align-center {
+    align-items : center;
+}
+
+.align-flex-end {
+    align-items : flex-end;
+}
+ㄴ
+.align-stretch {
+    align-items: stretch;
+    
+}
+/*플렉스박스 여러줄 출력*/
+.flex-wrap{
+    flex-wrap:wrap;
+}
+
+.a-content{
+    align-content:space-around;
+}
+
+.f-container {
+    display:flex;
+    list-style-type: none;
+    justify-content: space-between;
+    flex-wrap:;
+}

@@ -1,0 +1,23 @@
+.header h1{
+    color:brown;
+    background-color: antiquewhite;
+    display:inline-block;
+}
+
+.header h1.on {
+    background-color : burlywood;
+}
+
+.main ul {
+    list-style: none;
+    display:flex;
+}
+
+.main ul li::after {
+    content : "|";
+    padding :10px;
+    display:inline-block;
+    flex-wrap : nowrap;
+}
+
+

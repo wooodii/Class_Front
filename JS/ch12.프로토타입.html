@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 프로토타입
+        // 미리 만들어둔 내용을 사용하기 위해 속성과 메소드를 복제해서 들고 온 것 
+
+
+        // 리터럴 객체에서 프로토 타입 
+        let rabbit = {
+            color: "white",
+            run : function(){
+                document.write("<p>달려어ㅓ어어어어</p>")
+            }
+        }
+
+        // 리터럴 객체의 프로토타입은 object 임 
+        // 배열의 프로포타입은 array이다.
+        // 배열에 바로 메소드가 지정되는 것이 아니라, 프로토타입에 있는 메소드를 들고온다. 
+        
+        // 사용자 지정객체를 만들기 위한 생성자
+        // 만들어진 객체는 생성자 함수를 프로토타입으로 가짐 
+
+        function Person(name) {
+            this.name = name;
+            this.intro = function() {+
+                document.write(`<p>4{name}입니다<p/>`)
+            }
+        }
+
+        let kim = new Person("김길동");
+        
+        
+        // 콘솔 
+        // person으로 만든 name 안에 프로토타입으로 firstName이 들어감
+        // this를 통해서 접근한 첫번째 이름을 돌려줌 
+        // person 이라는 생성자함수의 프로토타입에 메소드 / 속성(firstName)을 추가해줄 수 있음 
+        Person.prototype.firstName = function() {
+            return this.name.charAt(0)
+        }
+        // kim.firstName() 을 하면 '김'이 출력
+        
+        // 객체에 들어가있는 메소드는 객체를 생성할 때마다 만들지만 
+        // prototype은 하나를 만들어두고 접근해서 사용함 
+        let park = new Person("박지현");
+        
+        park.firstName()
+
+        //리터럴 객체의 속성  및 메소드
+        // 처음 만들어지는 프로토타입으로 볼 수 있고, 여기 안에 object 
+        // prototype은 함수마다 하나씩 가지고 있는 것 
+        // _proto_는 객체마다 prototype에 접근하기 위해 가지고 있는 것 
+        // *_proto_는 prototype안에 있다. 
+
+        function person(name) {
+            this.name = name; 
+            this.intro = function() {
+                document.write(`<p>${name}입니다</p>`)
+            }
+
+            // 생성자함수에 프로토타입을 추가함 
+            this._proto_.lastName = function() {
+                return this.name.slice(1);
+            }
+        }
+
+        // 프로토타입 메소드와 속성 
+        // family 속성 추가 "진돗개"
+        Dog.prototype.familyPrint = function() {
+            return this.family
+        }
+        
+        let myPuppy = new Dog("마주",1)
+
+
+        // getter, setter
+        Object.defineProperties(myPuppy, "americanAge",
+        {get : function(){  return this.age-1; }});
+    </script>
+</body>
+</html>

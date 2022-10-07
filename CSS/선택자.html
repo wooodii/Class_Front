@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./선택자.css">
+    <title>선택자</title>
+</head>
+
+<body>
+<h1>결합선택자</h1>
+<h2>자손과 자식선택자</h2>    
+<div class ="parents">
+    <p>자식 : parents 클래스 바로 아래의 태그</p>
+    <div>
+        <p>자손 : parents 클래스에 속한 태그</p>.
+    </div>
+
+    <h1>동위 선택자</h1>
+    <h2>일반동위/인접동위선택자</h2>
+    <div>
+        <p class="m-silbing">현재 요소</p>
+        <p>인접 요소</p>
+        <p>일반 동위 요소</p>
+    </div>
+
+    <div>
+        <p>동위요소가 아닙니다</p>
+    </div>
+    <p>일반 동위 요소</p>
+</div>
+
+
+<h2>인접동위자 선택 예시</h2>
+    <ul class = "test-ul">
+        <li>A</li>
+        <li class="last-li">B</li>
+        <li>C</li>
+    </ul>
+
+
+
+    <h1>의사클래스</h1>
+    <h2>동적 의사 클래스</h2>
+
+    <a href="">링크에 걸리는 동적 의사 클래스</a>
+    <input class ="focus-input" type="text"> 포커스를 가지는 동적 의사 클래스
+
+    <h1>선택자 실습</h1>
+    <!-- ul, ol태그를 만들어서 ol 태그의 li만 백그라운드 컬러색 추가 -->
+    <ul class="ul">
+        <li>ULULUL</li>
+        <li>ULULUL</li>
+    </ul>
+
+    <ol>
+        <li class ="ol">OLOLOL</li>
+        <li>OLOLOL</li>
+    </ol>
+    <!-- 의사클래스 중 focus를 사용해서 글자두께를 두껍게 하고 글자색 바꾸기 -->
+    <input class=bold type="text"> 글자두께 두껍게 글자색 바꾸기 
+
+    <h2>상태 의사 클래스</h2>
+    <input class="checked-box" type="checkbox">
+    <span>상태의사 클래스로 꾸며준 체크박스</span>
+    <input class ="disabled-box" type="checkbox" disabled>
+    <span> disabled 상태일 때 꾸며준 체크박스 </span>
+    <input class ="enabled-box" type="checkbox">
+    <span> disabled 상태가 아닐 때 꾸며준 체크박스 </span>
+
+    <!-- list의 숫자값을 없애고 , input:checked일 때 span에 취소줄 생성 -->
+    <ol class="list">
+        <li>
+            <input type="checkbox"> <span>내용1</span>
+        </li>
+        <li>
+            <input type="checkbox"> <span>내용2</span>
+        </li>
+    </ol>
+
+    <h2> 구조의사클래스</h2>
+    <p>부모-자식 관계에서 요소를 찾기위한 의사클래스</p>
+    <table class ="table-child">
+        <tr>
+            <td>내용1</td>
+            <td>네용2</td>
+        </tr>
+        <tr>
+            <td>내용1</td>
+            <td>네용2</td>
+        </tr>
+        <tr>
+            <td>내용1</td>
+            <td>네용2</td>
+        </tr>
+        <tr>
+            <td>내용1</td>
+            <td>네용2</td>
+        </tr>
+    </table>
+
+    <!-- ol리스트를 만들어 짝수 li의 백그라운드 컬러를 만들기 -->
+    <ol class="li-background">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ol>
+<!-- of-type -->
+    <h2>of-type</h2>
+    <ol class ="of-type">
+        <li>111</li>
+        <li>222</li>
+        <li class =" type">333</li>
+        <li>444</li>
+    </ol>
+
+
+    <h2>의사 요소</h2>
+    <p class="first-letter">첫 글자만 선택</p>
+    <p class="first-line">첫 번째라인을 선택해서 구며줍니다. <br>
+                            두번째 라인입니다</p>
+
+    <p class="before">앞에 새로운 내용이 추가됩니다</p>
+    <p class="after">뒤에 새로운 내용이 추가됩니다.</p>
+    <p class="selection"> 드래그 하여 선택한 부분은 바탕색과 글자색이 반전되어 나타납니다.</p>
+
+    <h2>속성 선택자 =</h2>
+    <!-- type 속성 = "button"(속성값) -->
+    <input type="button"> <span>버튼 타입입니다.</span> <br>
+    <input type="checkbox" > <span>체크박스 타입입니다.</span> 
+
+    <!-- input type="radio" 태그를 생성하고, 뒤에 작성한 span 태그의 글자색을 바꾸세요-->
+    <input type="radio"><span>dsfsdfsf</span>
+
+    <h2>기타 의사 클래스</h2>
+    <p>내용을 작성하였습니다.</p>
+    <div>div 태그 안에 작성하였습니다. </div>
+
+    <!-- not 클래스 안에 있는 p를 제외하고 글자색을 바꿈 -->
+    <div class="not">
+        <h1>동일한 색상을 넣을 태그이니다.</h1>
+        <h2>동일한 색상을 넣을 태그입니다.</h2>
+        <p>제외할 태그입니다.</p>
+    </div>
+
+    <h2>특정요소의 클래스</h2>
+    <h3 class ="color"> color 클래스입니다.</h3>
+    <h1 class ="color"> h1태그의 color 클래스입니다.</h1>
+
+    <h1>css선택자 실습</h1>
+    
+    <h2>선택자를 이용하여 div로 나눠진 태그를 따로 선택</h2>
+    <table class ="tabled">
+        <p>색을 누르면 사전으로 넘어갑니다.</p>
+
+        <div><a href="">빨강</a></div>
+        <div><a href="">파랑</a> </div>
+        <div><a href="">노랑</a> </div>
+    </table>
+
+</body>
+</html>

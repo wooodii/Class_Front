@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 배열
+    // 배열 안에 다양한 자료형이 동시에 들어갈 수 있으나
+    // 하나의 자료형으로 통일해 사용
+
+    let arr =["1", "2", "3"];
+
+    //배열여부확인을 위해 array.isArray / instanceof 사용
+    document.write(
+        Array.isArray(array)? "배열입니다." : "배열이 아닙니다"
+        );
+
+    // 반복문 for
+    // let을 사용해야 변경가능 (for 문안에서 let으로 선언한 변수는 for문 안에서만 사용)
+    for(let i =10; i>0; i--){
+        document.write(`<h1>${i}</h1>`)
+    }
+
+    for(let i =1; i<10; i++) {
+        document.write(`<p> 2 X ${i} = ${i*2}`)
+    }
+
+    // 배열과 함께쓰는 반복문 
+    let names =["홍길동","성춘향","흥부"]
+    document.write("<ul>");
+    // for in > 변수를 통해서 인덱스 값(1,2,3)을 가져옴 
+    for(index in names){
+        document.write(`<li>${index}</ul>`)
+    }
+    document.write("</ul>");
+    // ul 안에 리스트가 여러개 들어와 있는 형태로 
+    // for 문을 통해서 반복 
+
+    document.write("<ol>")
+    for (name of names){
+        document.write(`<li>${name}</li>`)
+    }
+    document.write("</ol>")
+
+    // for in /of문 실습 
+    let scores = [51,68,97,98,99]
+
+    for(score of scores){
+        if(score >= 60){
+            document.write(`${score} : 합격`);
+        }else{
+            document.write(`${score} : 불합격`);
+        }
+    }
+
+    for(score in scores){
+        if(score >= 60){
+            document.write(`${scores[index]} : 합격`);
+        }else{
+            document.write(`${scores[index]} : 불합격`);
+        }
+    }
+
+    // 중첩 for 문 
+    for(let i =0; i<5; i++){
+        for(let j= 0; j<5; j++){
+            document.write("("+i+','+j+")");
+        }
+        docuemt.wirte("<br>");
+    }
+
+    </script> 
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./magnific-popup.css">
+    <link rel="stylesheet" href="./imagepop.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./jquery.magnific-popup.js"></script>
+    <script src="./jquery.magnific-popup.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- a태그에 클래스 이름을 걸어서 제작 
+    href는 큰이미지 img는 작은 이미지 -->
+    <a class="image-popup-vertical-fit" href="../HTML/IMAGE/woman.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
+        <img src="../HTML/IMAGE/woman.jpg" width="75" height="75">
+    </a>
+    <a class="image-popup-fit-width" href="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_b.jpg" title="This image fits only horizontally.">
+        <img src="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_s.jpg" width="75" height="75">
+    </a>
+    <a class="image-popup-no-margins" href="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg">
+        <img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75">
+    </a>
+    <script>
+    $(document).ready(function() {
+
+    $('.image-popup-vertical-fit').magnificPopup({
+        //a 태그 크래스 이름에 플러그인 연결 
+        // 속성을 객체 형태로 넣어줌 
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-img-mobile',
+        image: {
+            verticalFit: true
+        }
+        
+    });
+
+    $('.image-popup-fit-width').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        image: {
+            verticalFit: false
+        }
+    });
+
+    $('.image-popup-no-margins').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        mainClass: 'mfp-no-margins mfp-with-zoom', 
+        // class to remove default margin from left and right side
+        image: {
+            verticalFit: true
+        },
+        zoom: {
+            enabled: true,
+            duration: 300 // don't foget to change the duration also in CSS
+        }
+    });
+
+    });
+    </script>
+</body>
+</html>

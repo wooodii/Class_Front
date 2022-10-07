@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- DOM요소의 속성 변경 -->
+    <!-- 태그 안에 있는 모든 내용을 innerHTML을 사용해 변경 -->
+    <!-- 문서에서도 자바스크립트처럼 속성을 사용할 수 있음 -->
+    <!-- title.innerHTML = time.getHours() + ":" + time.getMinutes(); -->
+    <!-- a.Tag.style.border = "3px solid black"  -->
+    <h1 id="title"> 처음 제목</h1>
+    <a href="#">링크</a>
+    <p class="text">클래스가 적용된 p태그</p>
+
+    <!-- liTag[0].innerHTML // '1' -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <form id = "form">
+        <label for="">name</label>
+        <input type="text" id="name">
+    </form>
+
+
+    <script>
+        // DOM 생성 메소드 
+        // return 을 통해서 요소를 생성만 하고, html문서에 추가하지는 않는다. 
+        // 변수에 넣어서 사용할 수 있음 
+        document.createElement("h1") // 창에 표시되지 않고 리턴 값으로 돌려줌 
+        document.createElement("a") 
+        document.createElement("p")
+
+        // DOM요소 문서객체모델 : 태그 Tag
+        // 문서객체에 접근해서 속성을 바꿀 수 있음 
+        let liTag = document.querySelectorAll("ul li"); // 요소 선택 
+        for (let i =0; i<liTag.length; i++){
+            liTag[i].innerHTML = "요소내용을 한번에 수정" // 요소 속성 수정
+        }
+
+        pTag.style.backgroundColor = "rgb(255,255,0)"
+        let h1Tag = document.querySelector("#title")
+        h1Tag.style.textDecoration = "line=through"
+        // 앞쪽에서 이미 litag를 들고왔음
+        // let liTag = document.querySelectorAll("ul li")
+        for (let i =0; i<li.Tag.length; i++){
+            liTag[i].style.color = "blue";
+        }
+
+        //node
+        h1Tag.parnetNode 
+        h1Tag.nextSibling // #text
+        h1Tag.nextSibling.nextSibling // 다음 다음 형제 노드 
+        h1Tag.nextElementSibling // 형제 요소에 접근 
+        ulTag
+
+        // NODE VS HTMLcollection 
+        ulTag.childNodes // 노드로 찾았기 때문에 텍스트 노드와 요소노드가 출력
+        ulTag.children // HTML컬렉션만 도출 
+
+        ulTag.firstElementChild // <li>...<li> 
+        // 하나의 요소를 접근한 후, 형제/자식 요소를 접근 
+        ulTag.lastElementChild.style.color = "red"
+
+        h1Tag.nodeName // 현 노드에 대한 이름을 출력 => 'H1'
+        ulTag.firstChild.nodeNmae // #text
+
+        ulTag.fristChild.nodeValue = "안녕"  // => '안녕'
+        ulTag.nodeType // 요소노드 vs 텍스트노드 인지 확인 위한 타입  => 1
+        h1Tag.textContent = "두번째 제목"
+
+        //실습1 
+        // 요소 접근 vs 노드 접근
+        // 요소 노드 => <h1> <p >
+        // 텍스트 노드 => 글자  
+        let h1Tag = document.querySelector("#title")
+        h1Tag.childNodes[0].nodeValue // '처음 제목'
+        h1Tag.nodeName // 'H1'
+        h1Tag.childNodes // NodeList[text]
+        
+        liTag[0].parentNode // <ul><ul>
+        liTag[1].parentNode.nextSibling // form 출력 
+
+
+        // 노드 관리 
+        // li태그를 만들고 나서 추가해주는 방식으로 사용 
+        let li = document.createElement ("li") // undefined
+        li // <li></li>
+        let text = documen.createTextNode("안녕")
+        text 
+        li.appendChild(text); // 노드 추가 
+        li.textContent = "값을바꾼 내용입니다"
+
+        let ulTag.appendChild(li) // <li>...</li>
+        ulTag.appendChild(document.createElement("li")
+        ulTag.lastElementChild.innerHTML = " 접근해서 추가한 내용입니다. "
+
+        li = documnet.createElement("li") // <li>...</li>
+        ulTag.appendChild(li) // <li>...</li>
+
+        ulTag.append(document.createElement("p"))
+        ulTag.lastChild.innerHTML = "P태그입니다"
+        ulTag.lastChild.remove();
+        ulTag.removeChild(ulTag.lastELementChild) // <li>...</li>
+            
+        // 속성 추가 
+        let style = document.createAttribute("style")
+        style // style =""
+
+        let style = document.createAttribute("style")
+        ulTag.setAttributeNode(style)
+        ulTag.style. color= "red "
+        
+        let pTag = document.createElement("p")
+        pTag // <p></p>
+        
+        let bodyTag = document.querySelector("body")
+        bodyTag // <body></body>
+        
+        body.appendChild(pTag)
+        let text = document.createTextNode("textnode를 이용한 텍스트 입니다")
+        bodyTag.lastChild.appendCHild(text) // "textnode를 이용한 텍스트립니다. "
+
+        attr.value = "color:blue"
+        bodyTag.lastChild.setAttributeNode(attr)
+        
+        liTag[0].style.color="red"
+        liTag[0].removeAttribute("style")
+        ulTag.removeChild(ulTag.firstElementChild) // removeChild 를 사용할 때에는 위치를 지정 
+        ulTag.remove()
+
+                // 클래스 적용 태그 
+                body
+        body.appendChild(document.querySelector('.text').cloneNode(true))
+        
+        textTag // 가장 위쪽에 있는 태그 
+        cloneTag
+        
+        // false는 가장 밖에 있는 것만 들고움 
+        let cloneTag2 = textTag.cloneNode(false)
+        cloneTag2 
+
+        // 코드 복제 실습 
+        let body = document.querySelector("body");
+        body.append(document.querySelector("#title").clondeNode(true))
+        
+        body.append(document.querySelector(".text").cloneNode(true))
+
+        // 노드 조작 실습 
+        let h1Tag = document.querySelector("#title")
+        h1Tag.textContent = "textContent로 바꾼 내용입니다."
+
+        // class에 classname 추가 
+        h1Tag.setAttribute("class", "classname")
+
+        h1Tag.style.color = 'blue' // blue
+</script>
+</body>
+</html>

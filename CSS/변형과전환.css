@@ -1,0 +1,182 @@
+.m-box {
+    width :200px;
+    height : 200px;
+    background-color: aquamarine;
+}
+
+.translate {
+    /* 50만큼 x축 100만큼 y축 밑으로 */
+    translate: 50px 100px;
+}
+.rotate {
+   rotate: 40deg; 
+}
+
+.scale{
+scale:1.5; translate: 50px 0 ;
+}
+
+.skew {
+    transform:skewX(-20deg)
+}
+
+.metrix {
+     transform : matrix(0.2,)
+}
+
+.t-box{
+    width: 100px;
+    height:100px;
+    background-color: saddlebrown;
+}
+
+
+.transition-width:hover {width:200px; transition-duration:0.5s;}
+/* hover시 높이가 300px로 증가하는 트랜지션 */
+/* 무엇을 어떻게 증가할 건지 알림 */
+.transition-height {transition :height 1s;}
+.transition-height:hover {
+    height:700px; transition-duration: 2s; transition-timing-function:ease-in;
+}
+
+/* .transition-transform {transition: scale 1s;}
+.transition-transtiform :hover {transform :scale(1.5), translate(100px,0);} */
+
+.transition-transform { transition: transform 1s;}
+.transition-transform:hover {transform: scale(1.5) rotate(90deg) }
+
+.transition-color {
+    transition: 
+    background-color 1s, border-radius 1s; }
+.transition-color:hover {
+    background-color:coral; 
+    border-radius: 50%;
+}
+
+/* 딜레이 설정 */
+.transition-delay {
+    transition:opacity 1s;
+    transition-delay:0.3s;
+}
+
+.transition-delay:hover {
+    opacity:0;
+}
+
+.transition-delay-input {
+    transition :background-color 1ms;
+}
+
+/* delay와 duration은 시작할 때 값을 하나만 주면 
+전환 시작 끝의 딜레이와듀레이션이 동일하게 들어감, 
+원한다면 값을 따로 주기 */
+
+.transition-delay-input :focus {
+    background-color:darkturquoise; 
+    transition-duration: 1s;
+    transition-delay:1s;
+}
+
+.transition-timing-linear {
+    transition : transform 1s;
+    transition-timing-function: linear;
+}
+
+.transition-timing-linear:hover {
+    transform : translateX(100deg);
+
+}
+
+.transition-timing-ease {
+    transition : transform 1s;
+    transition-timing-function:ease; 
+}
+
+.transition-timing-ease :hover{
+    transform :translate(100px);
+}
+
+.transition-border {
+    transition:border 1s;
+}
+
+.transition-border:hover {
+    border :5px solid yellow;
+}
+
+.transition-check +span {
+    transition :color 1s;
+}
+
+.transition-check:checked+span {
+    color :red;
+}
+
+.menu {
+    display: inline-block;
+}
+.menu:hover menu-icon {
+    border-top : 5px solid rgb(255,0 ,0);
+}
+
+.menu-icon{
+    border-top : 5px solid black; 
+    width: 20px;
+    height : 3.5px;
+    transition : border-top 1s;
+}
+
+.line1 {
+    transition : transform 1s;
+    transform-origin: left top;
+}
+
+.menu:hover .line1 {
+    transform: rotate(45deg);
+}
+
+.line3 {
+    transition : transform 1s;
+    transform-origin: left bottom;
+}
+
+.menu:hover .line3 {
+    transform: rotate(-45deg);
+}
+
+.line2 {
+    transition : opacity 1s;
+}
+
+.menu:hover .line2 {
+    opacity:0;
+}
+
+/* 마우스를 올렸을 때 이미지 확대 */
+.img-box {
+    display:inline-block;
+    width:200px;
+    height: 200px;
+    overflow: hidden;
+    transition: background-color 1s; 
+}
+/* 부모의 경우는 항상 자식보다 뒤에 존재 */
+.img-box:hover{
+    background-color : rgba(0,0.2,0.2,0.2)
+}
+.img {
+    width:200px;
+    transition:transform 1s; 
+}
+
+.img-box:hover img {
+    transform : scale(1.2);
+}
+
+.img-box:hover img:after {
+    display :inline-block;
+    content:"미리보기";
+    width:200px;
+    height:200px;
+    background-color: black;
+}

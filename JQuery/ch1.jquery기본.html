@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquery cdn 코드를 붙여넣기 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+</head>
+<body>
+    <h1 id="title">안녕하세요</h1>
+
+    <ul id="list">
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+        <li>네번째</li>
+        <li>다섯번째</li>
+    </ul>
+
+    <input type="text" id="name">
+
+    <script>
+        // window.onload() = function()
+        $(document).ready(
+            // 실행될 익명함수 넣기
+            function(){
+                console.log("실행되었습니다");
+            }
+        );
+
+        $(()=> {console.log("제이쿼리로 실행하고 있습니다.")})
+    
+    // document.querySelector().addEventListener("이벤트타입", 함수)
+    $("#title").on("click",function(){
+        console.log("타이틀을 눌렀습니다");
+    });
+    
+    // css와 동일한 선택자를 통해 접근가능 
+    //console.dir($("#list : eq(3)"));
+
+    // 요소의 값을 메소드를 통해 가져온다 = getter 
+    const title = $('#title');
+    console.log(title.html());
+    title.html("원하는 값으로 수정합니다.");    
+
+    // setter 뒤에 setter 값을 수정하는 메소드를 계속 연결가능 (값을 넣어주는 것 setter )
+    $('#name').val("값을 넣어줄 수 있습니다").attr('style','color:red');
+
+
+    // 요소의 추가 삭제 
+    const pTag = $("<div>").append($("<p>").html("추가된 내용입니다")); 
+    $('body').append(pTag);   
+    
+    
+    // 요소 삭제
+    $('#list li:eq(2)').remove(); // 세번째가 사라짐 
+    $('body').append(pTag.clone()) // 이미 추가된 태그를 다시 붙이고자 할 때 
+    
+
+    // 
+    </script>
+</body>
+</html>

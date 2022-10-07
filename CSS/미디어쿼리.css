@@ -1,0 +1,58 @@
+body {background-color: orange};
+h1{color : white}
+
+.grid {
+    display:grid;
+    grid-template-columns : repeat(4, 1fr);
+}
+
+.grid-item {
+    border : 3px  solid white;
+}
+/*minwidth의 적어준 값이상일 대 보여지는 화면*/
+@media screen and (min-width:480px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+/*max-width 적어준 값 이하일 대 보여지는 화면*/
+@media screen and (min-width : 480px) and (max-width:980px) {
+    body {
+        background-color: darkolivegreen;
+    }
+}
+
+@media screen and(max-width:481px) and(min-width:979px) {
+    body {background-color: mediumblue;}
+}
+
+/* 미디어쿼리를 이용한 화면크기에 따른 네브바 변화 */
+.nav {border-bottom : 4px solid black;}
+.nav .moblie {display: none; visibility: hidden;}
+.nav .menu {list-style : none; 
+    display:flex; 
+    justify-content: space-around;} 
+.nav .menu > li{ 
+    padding : 2px 10px;
+    text-decoration: none;
+}
+
+/* 데스크탑 */
+@media screen and (min-width:1024px) {
+
+}
+/* 탭크기 */
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .nav .menu {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-around;
+        text-align:center; 
+    }
+}
+/* 모바일크기 */
+@media screen and (max-width:767px) {
+    .nav .moblie {display:block;}
+    .nav .menu {display:none;}
+    }

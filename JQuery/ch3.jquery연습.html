@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .move{
+            opacity:0%
+        }
+
+        .move.on{
+            transition :all 1s;
+            opacity: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./image/tiny.jpg" alt="" id="img" class="move">
+    <script>
+        // 화면 시작 시에는 아무것도 보이지 않고 
+        // load가 끝나면 이미지가 보이는 이벤트를 넣어주기
+        // load가 되었을 때, 이미지 트랜지션이 들어간 CSS의 클래스를 추가 
+        $(function() {
+            $("#img").addClass("on");
+        });
+
+        $(document).scroll(function() {
+            $("#img").addClass("on");
+        });
+
+        
+    </script>
+</body>
+</html>

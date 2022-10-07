@@ -1,0 +1,59 @@
+
+.layout{
+    border:3px solid brown;
+}
+
+.layout-header{
+    border:3px solid yellow;
+    text-align: center;
+}
+
+.layout-nav{
+    border: 3px solid magenta;
+    width: 25%;
+    float:left; 
+}
+
+.layout-section{
+    border: 3px solid skyblue;
+    width:73%;
+    margin-left:26%;
+}
+
+.layout-footer{
+    border:3px solid aqua; 
+    clear:both
+}
+
+/* 이미 사용한 클래스 이름을 묶어서 다른 속성을 추가 가능 
+ 아래 요소에 포함된 요소들은 동일한 속성들이 적용  */
+.layout-header, .layout-footer {
+    text-align :center;
+}
+
+
+.boxbig{
+    border : 2px solid black;
+}
+.box{
+    border : 3px solid black;
+    background-color:orange;
+    padding : 15px 30px ;
+}
+
+.box .pageup .pagedown{
+    text-decoration: none;
+}
+
+.box .pageup .pagedown:hover{
+    color:white;
+}
+
+.main .nav{
+    display :inline-block; 
+}
+
+.header . {
+    text-align : center; 
+}
+

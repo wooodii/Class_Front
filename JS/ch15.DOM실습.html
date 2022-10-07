@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>수정하기 전 제목입니다</h1>
+
+    <div>
+        <ul class = "ul">
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ul>
+    
+        <ol>
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ol>
+    </div>
+    <div class="main">
+        <p><span class = span>빈 공간</span>입니다</p>
+    </div>
+    
+    <div class = footer>
+        <p>푸터영역입니다</p>
+    </div>
+    
+    <script>
+        // let 사용 
+        // // h1 - 제목, ul
+        // let h1Tag = docuemnt.querySelector("h1")
+        // h1Tag.style.backgroudColor ="lightgray";
+        // h1Tag.style.color ="blue";
+        // h1Tag.textContext = "dom을 이용한 수정 "
+        
+        // let ulTag = document.querySelector("ul")
+        // ulTag.removeChild(ulTag.firstElementChild);
+        
+        
+        // let li = document.createElement(li)
+        
+        // // sol1
+        // li=document.createElement("li")
+        // li.innerHTML = "새로 추가한 노드요소입ㄴ디ㅏ, textcontext사용가능"
+        // ulTag.append(li)
+
+        // //sol2
+        // ulTag.lastElementChild.innerHTML = " 새로 추가한 노드요소입니다."
+
+        // // ol태그 - 내용을 바꾸었습니다 (삭제, 변경)
+        // let olTag = documemnt.querySelector("ol")
+        // olTag // 값이 들어간 것 확인 
+        // // 가운데에 있는 내용 지우기
+        // olTag.firstElementCHild.nextElementSibling.remove()
+        // // 내용 수정 
+        // olTag.firstChild.innerHTML = "innerHTML로 내용을 변경하였습니다"
+        // // 마지막 삭제 
+        // olTag =lastElementChild.remove()
+
+        // // p태그 - 빈공간입니다
+        // //sol1
+        // let pTag = document.querySelector("p")
+        // body.append(document.querySelector("p").cloneNode(true))
+        // // sol2
+        // document.querySelector("p span").style.color = "red"
+        // pTag.firstChild.style.color = "red"
+        // pTag.append(document.querySelector("p").cloneNode(true))
+
+        // dom 사용
+        // const를 사용하면 값을 안전하게
+        const h1Tag = document.querySelector("h1")
+        h1Tag.textContent = "DOM을 이용한 수정"
+        h1Tag.style.color = "blue"
+        // setAttribute를 이용해서 값을 수정하면 style의 전체 값을 수정 
+        h1Tag.setAttribute("style", "color:blue; background-color:lightgray")
+
+        // 안에다 객체를 여러개 할당할 경우에는 const 대신 let 사용
+        const ulTag = document.querySelector("ul");
+        // 노드를 생성했다면 반드시 append를 통해서 추가해주어야 함 
+        ulTag.removeChild(ulTag.firstElementChild);
+        
+        li.innerHTML = "새로추가한 노드입니다" ;
+        ulTag.append(li)
+
+        const olTag = document.querySelector("ol");
+
+        // first / last / 배열 인덱스를 통해서 자식요소를 찾아줄 수 있음 
+        olTag.firstElementChild.nextElementSibling.remove();
+
+        olTag.children[2].remove();
+        olTag.firstElementchild.innerHTML = "내용을 바꾸었습니다"
+        
+        const spanTag = documnet.querySelector("p span");
+        spanTag.style.color = "red";
+        
+        // 클래스의 경우는 .을 찍어서 추가 
+        const main = document.querySelector(".main");
+        main.append(spanTag.parentElement.cloneNode(true)); 
+
+        
+    </script>
+</body>
+</html>

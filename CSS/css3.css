@@ -1,0 +1,57 @@
+.color-hsl {
+    background-color:#39A7F8;
+}
+
+.linear-gradient {
+    margin:0px auto;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(0deg,green,yellow,white);
+}
+
+.radial-gradient {
+    margin:0px auto;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(yellow, red, brown);
+}
+
+.m-background {
+    width: 100 px;
+    height:100px;
+    background-color:aqua;
+}
+
+/* static포지션에서 위치 이동 */
+.m-frame{
+    position:absolute;
+    margin-top: -100px ;
+}
+
+.box1{
+    background-color:teal;
+    width:200px;
+    height:100px;
+    display: inline-block;
+    margin: 15px;
+    border:2px solid black;
+    box-shadow: 20px 4px 3px gray;
+}
+
+.box-img{
+    background-image:url();
+    background-size:contain;
+}
+
+.m-textbox{
+    width:100px;
+    height:100px;
+}
+
+.text-overflow {
+    /* 영어에 한해서만 들자를 잘라줌 */
+    word-break:break-all;
+    overflow:hidden; 
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}

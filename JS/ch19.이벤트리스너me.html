@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">이벤트 리스너를 통해서 값을 바꿔줍니다</p>
+    
+    <script>
+        // 이벤트리스너를 붙여줄 dom 객체 가져오기 
+        // 가져온 DOM 객체에 이벤트 리스너 붙이기 
+        
+        // 1. 함수 이름을 전달해서 함수 내용을 전달하기 
+        // 바깥에 있는 객체는 전역객체로 모든 자바s에서 사용 가능
+
+        const text = document.querySelector("#text");
+        
+        // 가져온 dom객체에 이벤트 리스너 붙이기 
+        text.addEventListener("click", changeColor("red"));
+        
+        // 이벤트 리스너에 들어갈 함수 작성하기 
+        function changeColor(color){
+            text.style.color= color
+        }
+
+        // 2. 인수를 가져올 경우 > 익명함수 안에 넣어서 함수 내용을 전달 changeColor (color)
+        text.addEventListener("click", 
+        function (){
+            changeColor("red")
+        });
+
+        function chagneColor(color){
+            text.style.color = color 
+        }
+
+        // 백그라운드 색을 바꾸는 함수를 작성하고
+        // addEventListener() 메소드를 사용해 text 객체에 click이벤트로 추가 
+
+        function changeBackground(color){
+            text.style.backgroundColor = color 
+        }
+        text.addEventListener("click", changeBackground("yellow"))
+
+
+
+        //필요한 정수의 범위만큼 설정 
+        text.addEventListener("click",
+        function() { 
+            let r = Math.floor(Math.random()*256);
+            let g = Math.floor(Math.random()*256);
+            let b = Math.floor(Math.random()*256);
+            // dom의 속성값은 문자열로 들어가기에 
+            // ``을 이용해 변수의 값을 가져갈 수 있도록 함 
+            changeColor(`rgb(${r}, ${g}, ${b})`)
+        });
+
+        //함수설정이 먹었는지 확인하는 방법 console.log
+        // 원하는대로 결과가 나오지 않는다면 오류를 확인해주어야 함 
+        // 실행이 되지 않는 식으로 오류가 나오기 때문에, console.log를 통해서 
+        // 이벤트가 실행되는지 확인 console.log("1. 이벤트실행확인")
+        // console.log("1. 값이 들어가있는지 확인") > 브라우저 
+        
+        // 이벤트 리스너에 들어갈 함수 작성
+        function changeColor(color) { 
+            // DOM의 속성 값은 문자열로 들어감 
+            text.style.color= color
+        }
+
+        text.addEventListener("click",
+        function() {
+            
+            changeColor("rgb(255,255,255)")            
+        });
+        function changeColor(color){
+            text.style.color = color
+        }
+
+        // 백그라운드 색을 바꾸는 함수를 작성 
+        function changeBackground() {
+          //  text.style.backgroundColor = "yellow";
+
+            if(text.style.backgroundColor == "yellow"){
+                text.style.backgroundColor = "blue";
+            }else
+                text.style.backgroundColor = "yellow";
+        }
+
+        text.addEventListener("click", changeBackground)
+        
+        
+    </script>
+</body>
+</html>

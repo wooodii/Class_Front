@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #divclick {
+            height :50px;
+            background-color:orange;
+        }
+
+        #pclick{
+            background-color: saddlebrown;
+        }
+
+        #spanclick {
+            background-color: yellow;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>이벤트 버블링</h1>
+    
+    <div id="divclick">
+        <p id="pclick">
+            <span id="spanclick">span태그</span>
+            태그입니다.
+        </p>
+        div태그입니다.
+    </div>
+
+    <p>
+        div와 p와 span이 동일한 이벤트를 가지고 있을 경우, 
+        span태그에 이벤트가 발생했을 때, p태그와 div태그에서도 이벤트가 발생하는 현상 
+        가장 아래에서 올라오면서 이벤트가 실행된다고 해서 버블링이라고 한다. 
+    </p>
+
+    <p>
+        위에서 아래로 내려오면서 실행된느 것 : 캡쳐링 
+    </p>
+
+    <script>
+        // 안에 감싸진 요소에 각각 이벤트를 걸게 되면 중복해서 출력 > 이벤트 버블링
+        document.querySelector("#divclick").addEventListener("click", (e) => print (e, "div"));
+        document.querySelector("#pclick").addEventListener("click", (e) => print (e, "p"));
+        document.querySelector("#spanclick").addEventListener("click", (e) => print (e, "span"));
+
+
+        function print(e, text){
+            e.stopPropagation();
+            //e.target이벤트가 실행된 요소
+            console.log(e.target);
+            console.dir(e);
+            console.log(text); 
+        }
+
+        // 요소 안에 요소가 들어가있는 여러 번 출력의 경우
+        // 이벤트 버블링이 나오는 까닭은 자바스크립트의 특성상 패스를 볼 경우 > 거쳐가는 요소가 나옴 
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.header {
+    border: 3px solid orange;
+}
+.nav {
+    border: 3px solid red;
+    float: left;
+    width: 30%;
+}
+.section {
+    border: 3px solid green;
+}
+
+/* 플루트 속성 clear로 제거  */
+.section {
+    clear:both;
+    border:3px solid green; 
+}
+
+/* 플로트속성연습 */
+.m-box{
+    background-color: cornflowerblue;
+    width:80%;
+    height:100px;
+    /* margin값을 추가하면 겹치지 않고 배치 */
+    margin-left:20%;
+}
+
+.float-box{
+    /* div를 사용하게되면 위치는 그대로이지만 안에 있는 
+    content만 들어가거나 컨텐츠만 모양이 바뀜 */
+    float : left;
+    background-color: yellowgreen ;
+    width: 20%;
+    height:200px;
+}
+
+.m-box{
+    background-color : darkkhaki;
+    width:400px;
+    height:400px;
+    overflow :auto;
+}
+
+.float-box {
+    float:left;
+    width :200px;
+    height:200px;
+}

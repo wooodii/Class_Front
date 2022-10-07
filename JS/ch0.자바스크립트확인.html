@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    //script태그를 통해서 자바스크립트 사용
+
+    console.log("hello js"); 
+    // 브라우저의 콘솔창에 출력
+    alert("hi"); 
+    // 경고창으로 출력
+
+    let text1 =prompt("문자를 입력해주세요") 
+    // 자바스크립트에서 입력받는 방법 : 콘솔에서 입력받지 않음 
+    // 프롬포트 창을 이용해 입력
+
+
+    // 태그에 작성된 id값을 통해서 요소를 찾고 그 안의 value 값을 가져옴 
+    // value값을 가지지 않는 태그일 경우는 undefined를 가져옴 
+    let text2 = document.getElemetById("inputText").value;
+    let text3 = document.querySelector("#inputText").value;
+
+    // 코드를 작성했을 때 내용을 보고 싶다면 console.log를 사용해야 함
+    // <P>{SFADF}<P>태그 사이에 있는 값을 가져오고 싶을 대 innerHTML 을 사용 
+    let text4 = document.querySelector("h1").innerHTML;
+
+</script>
+
+    <!-- 실습 -->
+    <h1><span id =name ></span>님 오신 것을 환영합니다. </h1>
+    <p>홈페이지에 방문하신 것을 환영합ㄴ디ㅏ.</p>
+    <script>
+
+    let nickname = prompt("닉네임을 입력해주세요");
+        document.write(`<h1>${nickname}님 오신 것을 환영합니다.</h1>`); 
+        document.write("홈페이지에 방문하신 것을 환영합니다.")
+
+        // prompt를 통해서 값을 가져오고 
+        document.querySelector("#name").innerHTML = nickname;
+        
+</script>
+
+
+</body>
+</html>
+
+

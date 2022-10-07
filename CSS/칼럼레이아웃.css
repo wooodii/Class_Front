@@ -1,0 +1,13 @@
+.main {
+    width :100%;
+    background-color:beige; 
+}
+
+.columns {
+    column-count :2; 
+    column-rule-style:dashed; 
+    column-rule-color : red ;
+    column-rule-width:2px;
+    column-gap : 40px; 
+    column-fill: balance;
+}

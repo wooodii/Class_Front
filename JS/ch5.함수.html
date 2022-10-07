@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //명시적 함수를 선언 
+        function hi() {
+            document.write("hi");
+        }
+
+        //명시적 함수 = 매개변수 존재
+        function introName() {
+            document.write(`<h1>안녕하세요 ${introName} 입니다. 반갑습니다 </h1>`)
+        } // introname에 값이 할당되지 않을 때는 undefined로 출렫
+
+
+        // 명시적 함수 = 매개변수 있고 ,리턴 존재함 
+        function introName(name){
+            return `안녕하세요 ${name}입니다. 반갑습니다.`;
+            // 백틱을 이용해서 넣어도 상관없음 
+            // 문자열이 들어갔을 때, 화면에 출력하기 위해서 작성된 함수를 호출 
+            // 리턴값을 가진 함수이기 때문에 호출할 때에는 함수의 return 값을 사용하기 위해서 , 변수에 할당하거나 값을 출력
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="numCheck()">
+
+    <script>
+        //랜덤 숫자 3개 출력 
+        function numCheck() {
+            for(let i=0; i<3; i++){
+            let randomNum = Math.random()*10
+            let random = parseInt(randomNum);
+            document.write(random)
+            }
+        }
+    </script>
+    <script>
+        //함수 function
+        function count() { 
+            for(let i=1; i<=10;i++) {
+                document.write(i);
+            }return num;
+        }
+
+        //함수 호출 방법
+        count(10);
+        // 함수의 리턴값 콘솔에 출력하기
+        console.log(count(3));
+        let returnNum = count(5);
+
+        //함수 선언 
+        function intro(){
+            document.write("<p>안녕하세요 반갑습니다.</p>")
+        }
+
+    </script>
+    <script>
+        // 함수 실행 - 실행 호출 
+        intro();
+        
+        // head에 선언한 명시적 함수를 호출할 때는 
+        // body-script에서 호출
+        hi();
+        introName("홍길동"); 
+
+        //리턴 값으로만 문자열로 반환해서 넣어주기 
+        document.write(introNameReturn("성춘향")); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="text">눌러주세요</p> 
+    <ol>
+        <li id="first list">
+            <input type="checkbox" id="checkbox">
+            첫번째 리스트입니다.
+        </li>
+    </ol>
+    
+    <script>
+        const text = document.querySelector("#text");
+
+        text.addEventListener("click", change);
+        
+        function change (event) {
+            let textDOM = event.target;
+            if(textDOM.style.color == 'black') {
+                textDOM.style.color = 'red'
+                textDOM.innerHTML = "숨겨진 단어입니다.";
+            }else{
+                textDOM.style.color = 'black';
+                textDOM.innerHTML = "눌러주세요"
+            }
+        }
+
+        // 실습 - 체크박스에 체크시 글자색 변경 
+        const checkbox = document.querySelector("#checkbox");
+        checkbox.addEventListener("click", changeText)
+
+
+        function changeText(e) {
+            if(e.target.checked) {
+                e.target.parentNode.style.color = "lightgray"
+            }else {
+                e.target.parentNode.style.color = "black"
+            }
+        }
+
+        // TODO list
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+.header {
+    color:white;
+    background-color: green;
+    font-size:3em;
+    padding:20px;
+    text-align:center;
+}
+
+.gnb{
+    border-top : 2px solid gray;
+    border-bottom : 2px solid gray;
+    padding: 20px;
+    /* gnb의 크기를 지정해주지 않았기 때문에 nav바 넘치지 않게 auto설정 , 정렬 */
+    overflow:auto;
+}
+
+.gnb ul li {
+    /* 옆으로 정렬 */
+    float:left;
+    margin:20px;
+    display:inline-block;
+}
+
+.maincontainer {
+    width:100%;
+    /* 스크롤 바가 생김 */
+    height: 800px;
+}
+
+.maincontainer .main{
+    width: 500px;
+    height:inherit;
+    background-color: green;
+    overflow:hidden;
+    /* 중앙정렬 */
+    margin:auto;
+    padding:10px 30px;
+    /* 보더 사이즈를 튀어나온 부분 높이로 맞추고 */
+    box-sizing: border-box;
+}
+
+/* section은 div와 성격이 동일하므로 컨텐츠 크기로 가지게 하려면
+display를 inlineblock으로 바꿔서 줌  */
+.maincontainer .main section{
+    display: inline-block;
+    width :200px;
+    height: 200px;
+    border:1px solid black;
+    float:left;
+}
+
+.maincontainer .main section .loginimage {
+    width: 200px;
+}
+
+.maincontainer .main section:first-child {
+    margin-right:20px;
+}
+
+.maincontainer .main section .secion-img {
+    width : 200px;
+}
+
+.footer ul li {
+    float :left
+}
+.footer ul li::before {
+    content: "";
+    display:inline-block;
+    width:1px;
+    height:14px;
+    /* 내용 띄워쓰기 */
+    margin:0 5px;
+    background-color: gray;
+}

@@ -1,0 +1,117 @@
+.mypadding {
+    padding:20px 50px 30px 60px;
+    background-color: yellowgreen;
+}
+
+/* 값을 하나만 지정하면 모든 패딩값이 동일함 */
+.mypadding-all {
+    padding:10px;
+    background-color: greenyellow;
+}
+
+/* x축끼리, y축끼리 같도록 값을 넣어서 안에다 backgroundcolor로 색상 지정 */
+/* 양쪽을 동일하게 넣고 싶을 때는 xy지정 */
+.mypadding-xy{
+    padding: 20px, 50px;
+    background-color: gray;
+}
+
+/* border -color축약표현, top. right, bottom, left수능로 들어감  */
+/* 네가지 값을 갖는 모든 속성에서 동일 순서 */
+.m-border {
+    border-style:solid;
+    border-width:5px;
+    border-color:red green blue magenta;
+}
+
+/* margin값 위아래가 적용되기 위해 디스플레이 값 block ,inline-block 이 필요함 */
+.m-margin {
+    display:inline-block;
+    margin :20px, 50px, 30px, 60px;
+}
+
+/* 중앙정렬이 되어있지 않은 상태로 볼 수 있음, 박스 모델에다가 추가 */
+/* html의 전체 요소 넓이를 구할 때에는 작성한 모든 요소의 넓이값을 더해서 구하기 */
+/* 픽셀로 작성했다면 안에 있는 컨텐츠의 크기와 padding. margin을 합쳐서 구하면 됨  */
+.m-margin-auto {
+    display:inline;
+    margin:auto;
+}
+
+.myoutline{
+    /* border값과 동일 위치에 선이 그어짐 */
+    /* border와 다른점은 패딩 범위를 포함해서 선을 그어줌 */
+    padding: 20px;
+    outline: 3px solid teal;
+}
+
+h1{
+    text-align:center;
+    background-color: red;
+    padding:20px;
+    text-align: center;
+}
+
+div {
+    border:2px dashed black;
+    border-radius: 10px;
+    /* padding으로 내부의 글자 간격 뛰우기 margin 은 바깥에 있는 공간  */
+    padding: 10px
+}
+
+p {
+    background-color:bisque;
+    padding: 5px 3px 5px 3px ;
+}
+
+.m-outline{
+    padding:0px;
+    outline:3px solid teal;
+}
+
+.title {
+    background-color: oranged;
+    padding:20px 0;
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+/* 중앙정렬 후,  padding추가를 통해 공간 두기 */
+table {
+    /* 중앙정렬 */
+    margin :auto;
+    background-color: bisque;
+    border-radius: 0 0 20px 20px;
+    border-collapse: collapse;
+    
+
+}
+.table-title {
+    background-color: orange;
+    border-bottom: 1px solid brown;
+}
+
+td{
+    padding: 5px 10px;
+}
+
+.a{
+    text-align:center;
+}
+
+/* a태그의 속성이 hover이기 때문*/
+a {
+    display:inline-block;
+    background-color: orange;
+    padding: 10px;
+    border-radius:10px;
+    border: solid 1px orange;
+    text-decoration: none;
+}
+
+a:hover {
+    box-shadow: 2cm;
+    background-color: red;
+}

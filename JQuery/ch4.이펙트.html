@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+
+        #title {
+            width :180px;
+            height :50px;
+            border :2px solid black;
+        }
+        #fade-box{
+            display: block;
+            width : 100px;
+            height: 100px;
+            background-color: pink;
+            border : salmon solid 5px;
+            border-radius: 50%;
+        }
+
+        #my-position {
+            position:fixed;
+            top : 300px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="title-btn">효과</button>
+    <h1 id="title">안녕하세요</h1> <br>
+
+    <button id="toogle-btn">토글버튼</button> <br>
+
+    <button id="fade-btn">버튼에 마우스를 올리면 상자가 나타나고 사라집니다</button>
+    <div id="fade-box"></div>
+    
+    <button id="box-slide">슬라이드 버튼</button>
+    <div class="my-box my-position"></div>
+
+
+    <script>
+        // title에 마우스를 올리면 3초만에 사라짐
+        $("#title").on("mouseenter", function(){
+            $("#title").hide(3000);
+        });
+
+        // toogle을 사용해 버튼을 누르면 사라지도록
+        $("#title-btn").on("click", function(){
+            $("#title").toggle(1000);
+        });
+
+        // 요소를 시작할 때, 보이지 않게 지정
+        // 1) ready 2) style= "display: none;" 사용
+        $(document).ready(function(){
+            $("#title").hide();
+        });
+
+        // $("#toggle-btn").on("click",function() {
+        //     $(this).next().toggle("slow");
+        // })
+
+
+        // 버튼에 마우스를 올리면 상자가 나타나고 사라집니다. 
+        // 1) ready - toggle - hide 2) next.fadeToogle 
+        $(document).ready(function(){
+            $("#fade-box").hide();
+        });
+
+        $("#fade-btn").on("mouseenter", function (){
+            $("#fade-box").toggle();
+        });
+
+        $("#fade-btn").on("mouseleave", function() {
+            $("#fade-box").hide()
+        });
+
+        $("#fade-box").on("mouseenter mouseleave"), function() {
+            $(this).next.fadeToogle("fast");
+        }
+
+
+        // 슬라이드 버튼
+        $("#box-slide").on("click", function(){
+            $(this).next()//?
+        })
+
+    </script>
+</body>
+</html>

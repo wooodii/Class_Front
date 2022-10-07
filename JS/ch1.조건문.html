@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(false) {
+            console.log("참");
+        }else{
+            console.log("거짓");
+        }
+
+
+        //실습 문제 확인 
+        // 변수 money에 값을 할당한 후, 
+        // 값이 1500보다 크면 버스를 타고갑니다. 
+        // 거짓이면 걸어갑니다를 출력
+        let money = 100;
+        if(money > 1500){
+            document.write("버스를 타고 갑니다");
+        }else{
+            document.write("걸어갑니다");
+        }
+
+        let isCard = true;
+        if(isCard) {
+            document.write("버스를 타고 갑니다.");
+        }else{
+            document.write("걸어갑니다");
+        }
+
+        // 중첩 조건문
+        let dust =20;
+        if(0<dust) {
+            document.write("좋음")
+        }else if(31<dust) {
+            docuemnt.write("보통")
+        }else if(dust>81){
+            document.write("bad")
+        }
+
+        // 조건문 연습 
+
+        let num = 1; 
+        if(num % 2 == 0){
+            document.write("짝수");
+        }else{
+            document.write("홀수");
+        }
+
+        let number = 2;
+        if( number > 0){
+            document.write("양");
+        }else if(number < 0){
+            document.write("음");
+            
+        }else if(number == 0){
+            document.write("0");
+
+        }
+
+
+        // let price = prompt("구매한 금액을 입력하세요"); 
+        if(price >= 10000) {
+            document.write(price*0.8)
+        }else if(price >= 50000){
+            document.write(price*0.9)
+        }else if(price >= 100000){
+            documet.write(price*0.95)
+        }
+
+
+        //switch 조건문 실습 
+        let score = "A";
+        switch(score){
+            case A: 
+            docuemnt.write("참 잘했습니다.");
+            break;
+            case B:
+                document.write("잘했습니다.");
+                break; 
+            case C:
+                docuemnt.write("아쉽습니다.");
+                break;
+            case D:
+            docuemnt.write("분발하세요.");
+                break;
+            default:
+            docuemnt.write("잘못 작성되었습니다.");
+            break;
+            }
+
+            // 삼항연산자 
+            // if /else 한줄로 표현 
+            (false) ? docuement.write("안녕") : console.log("안녕");
+
+            //조건식 ? 참일 때 값 : 거짓일 때 값
+            // 위와 같이 작성해 초기화
+            let test; // 선언만 하면 undefined 값이 들어감 
+            // test라는 boolean 값이 아닌 자료형이 조건식에 들어가면 Boolean 을 이용
+            // 한 자동 형변환이 일어난 값이 들어간다. 
+            // null, undefined, "" ,0 이러한 값은 false 로 변환 
+            test = test ? test : "초기화값"; 
+
+            let a =40; let b=30;
+            let max = a>b ? a: b; 
+            document.write(max);
+     </script>
+</body>
+</html>

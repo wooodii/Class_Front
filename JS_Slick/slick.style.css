@@ -1,0 +1,45 @@
+body {
+    background-color:lightblue;
+}
+.slick-prev {
+    border:none;    
+}
+
+.slick-prev:before {
+    content: "";
+    display:inline-block;
+    width: 30px;
+    height:30px;
+    /* 컨텐츠 크기만큼 들어감  */
+    background-image: url(../HTML/IMAGE/square-caret-left-solid.svg);
+    background-repeat: no-repeat;
+}
+
+.slick-next::before{
+    content: "";
+    display:inline-block;
+    width: 30px;
+    height:30px;
+    /* 컨텐츠 크기만큼 들어감  */
+    background-image: url(../HTML/IMAGE/square-caret-right-solid.svg);
+    background-repeat: no-repeat;
+}
+
+.slick-next  {
+    border:none;  
+}
+.slick-dots {
+    list-style: none;
+}
+
+.slick-dots li button:before{
+    display:inline-block;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+.your-class img{
+    width:100%;
+    height:100%;
+}
+

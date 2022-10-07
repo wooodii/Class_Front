@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p onclick = "alert('문자열을 클릭했어요')">클릭해주세요</p>
+    <p onclick = "testFunc()">사용자 함수가 실행됩니다. 클릭해주세요</p>
+    <p>
+        HTML 이벤트 속성으로 이벤트 핸들러 함수를 넣어줄 때, 
+        "함수이름()" 형태로 넣어서 사용할 수 있다
+        이때, 인수값을 넣어줄 때 문자열일 경우 ''을 사용해 ""가 겹치지 않게 주의
+    </p>
+
+    <input type="text" id="text" value="입력값입니다"> 
+    <input type="checkbox" name="" id="checkbox" checked=""> 체크박스입니다 
+    
+
+    <!-- 실습1
+    onchange :값이 바뀔 때마다 설정 
+    onclick : 버튼을 누르면 내용 출력 -->
+    <p>값을 넣어주세요</p>
+    <input id="inputtext" type="text" onchange ="input()"> 
+    <button onclick="input()">확인</button>
+    <p id="textshow"></p>
+
+    <!-- 실습2 
+    focus : 인풋 테두리에 굵은 검은색 -->
+    <input id="inputtext" type="text" onchange="input()" onfocus="changeBackground()" onblur="removeBackground()">
+    <button onclick = "input()">확인</button>
+    
+
+    <script>
+        // 내용 : 확인하시겠습니까? 
+        // confirm을 사용하여 예일 경우 : alert 창에 확인 출력 
+        // 아니오일 경우 : 취소했습니다를 콘솔에 출력
+
+        function testFunc() {
+            let a = confirm("확인하시겠습니까?");
+
+            if(a == true) {
+                alert("확인")
+            }else {
+                alert("취소했습니다.")
+            }
+        }
+
+
+        //onload
+        //실행되자마자 속성의 변화를 주고 싶을 때 사용
+        window.onload = function() {
+            console.log("윈도우가 로드되었습니다.")
+        }
+
+        // 값을 가져올 때 주의해야 할 점 
+        // 값을 태그 안에 저장하는(value) 경우 들고오는 방식이 다름 
+        const input =document.querySelector("input")
+        console.log(inputText)
+        console.dir(inputText)
+        inputText.value // 입력값입니다.
+
+
+        const check = document.querySelector("#checkbox")
+        check.checked
+        check.checked = false  // 체크박스 해제 
+        check.disabled
+        check.disabled = ture // 접근 불가 
+
+        // 실습1
+        function input() {
+            const text = document.querySelector("#inputtext");
+            let textValue = text.value;
+            
+            const pTag = document.querySelector("#textshow");
+            pTag.innerHTML = textValue;
+        }
+
+
+        // 실습2 요소의 속성으로 등록
+        function changeBackground(){
+            const input = document.querySelelctor("#inputtext");
+            input.style.backgroundcolor ="gray";
+        }
+
+        // 서로 다른 함수라면 같은 이름을 써도 됨
+        function changeBackground(){
+            const text = docuemnt.querySelector("#inputtext"); 
+            text.backgroundcolor = "gray";
+            text.innerHTML = "포커스가 잡혀있습니다"
+        }
+
+        function removeBackground() {
+            const input = document.querySelelctor("#inputtext")
+            input.backgroundcolor = "white"
+        }
+
+    </script>
+</body>
+</html>

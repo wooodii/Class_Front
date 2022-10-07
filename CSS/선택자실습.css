@@ -1,0 +1,40 @@
+.main-contents {
+    border :3px solid saddlebrown;
+    list-style-type: none;
+}
+
+.main-contents ol {
+    list-style-type: none;
+}`
+.main-contents ol a {
+    text-decoration: none;
+    color :black;
+}
+
+.tag ul {
+    list-style-type:none;
+}
+
+/* 태그 꾸미기 */
+.tag ul ol {
+    float:left;
+    border-radius:20px;
+    background-color: cadetblue;
+    color :white;
+    padding : 5px 10px;
+    margin : 0px 10px;
+}
+
+.after::after{
+    content : "N";
+    width:20px;
+    height:20px ;
+    display:inline-block;
+    background-color: orange;
+    border-radius: 50%;
+    color:white;
+    text-align: center ;
+    margin-left :3px;
+    padding-right : 3px;
+}
+

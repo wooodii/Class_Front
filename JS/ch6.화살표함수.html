@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //화살표함수
+
+        //1. 매개변수가 없고, return이 없는 함수 
+        let arrowNoVar = () => {document.write("매개변수와 return이 없는 함수")};
+        arrowNoVar();
+
+        //2. 매개변수가 1개 있고, return이 없는 함수 
+        let arrowOneVar = a =>{document.write(`<p>${a}</p>`)};
+        arrowOneVar("매개변수가 하나 있습니다");
+
+        //3. 매개변수가 2개 이상이고, return이 없는 함수
+        //   매개변수를 ()를 사용해 적어주기
+        let arrowMoreVar = (a,b,c) => {document.write(a,b,c)}
+        arrowMoreVar(1,2,3)
+
+        document.write(`<br>`);
+
+        //4. 실행 명령어 없이 '한줄로' return 값을 줄 때
+        // => 화살표 뒤에 '중괄호 없이' 표현식을 적으면 그 내용은 return 값이 됨 
+        let arrowReturn = (a,b) => a+b;
+        document.write(arrowReturn(1,4)) //5
+
+        document.write(`<br>`);
+
+        // 5. 중괄호를 이용해 '여러줄'로 출력한 후 return
+        // return 을 직접 적어서 사용함 
+        let arrowMultiReturn =(a,b) => {
+            let sum = a+b; 
+            return sum;
+        }
+        document.write(arrowMultiReturn(3,5))
+
+        document.write(`<br>`);
+
+        // 실습
+        let subArrow = (num1, num2) => {
+            let minus = num1-num2;
+            return minus;
+        }
+        document.write(subArrow(3,2)) //1
+        document.write(`<br>`);
+
+        // 함수 안에 함수를 인수로 넣기 
+        // fun자체에는 funcVar가 들어가 있음 
+        function funcVar(func){
+            document.write('매개변수로 받아온 함수를 실행합니다.');
+            func();
+        }
+        document.write(`<br>`);
+
+        // 함수를 인수로 넣어주기 
+        funcVar(function(){
+            document.write("익명함수를 통해 넣어준 함수입니다.");
+        })
+        
+
+        // ask 함수
+        let question = confirm("종료버튼을 누르겠습니끼?");
+        if(question) {
+            alert('종료버튼을 눌렀습니다.')
+        }else{
+            alert('취소버튼을 눌렀습니다.')
+        }
+        // ask 함수 표현식을 화살표함수로 바꾸기
+        let quest = (yes, no) => {
+            confirm("종료버튼을 누르겠습니까");
+            if (confirm(quset)){
+                yes("종료버튼을 눌렀습니다.")
+            }else{
+                no("취소버튼을 눌렀습니다.")
+            }
+            }
+            
+            // 함수선언 
+        function ask(question, yes, no){
+            if(confirm(question))
+                yes(); // 받아온 함수 실행 
+            else
+                no(); // 받아온 함수 실행
+        }
+
+        // 질문
+        ask(동의하십니까,
+            function(){alert("동의하셨습니다.")},
+            function(){alert("취소버튼을 누르셨습니다.")});
+
+
+            
+        ask(동의하십니까,
+            () => {alert("동의하셨습니다.")},
+            () => {alert("취소버튼을 누르셨습니다.")});
+
+        
+    </script>
+</body>
+</html>

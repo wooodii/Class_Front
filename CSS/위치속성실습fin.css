@@ -1,0 +1,36 @@
+.bookmark{
+    padding:10px;
+    position:fixed;
+    /* 맨 위쪽에 고정 */
+    top:0;
+    right:0;
+    width: 150px;
+    height: 100px;
+    background-color:coral; 
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    color: #fff;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.box1{
+    width: 400px;
+    height:200px;
+    background-color: yellow;
+}
+
+.mail ol{
+    overflow:auto;
+    float:left;
+    padding:10px 20px 10px 20px ;
+    background-color:aliceblue;
+}
+

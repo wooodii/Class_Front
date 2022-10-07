@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="border :3px solid red">p요소는 display 속성값이 block인 요소입니다. </p>
+    <p style="border :3px solid red">p요소는 display 속성값이 block인 요소입니다. </p>
+    <h1 style="border :3px solid blue">h1요소는 display 속성값이 block인 요소입니다. </h1>
+    <ul style="border:3px solid midnightblue">ul요소는 display속성값이 블록입니다</ul>
+
+
+    <div style ="border:3px solid orange">div태그를 사용하였습니다</div>
+
+    <div style="border:3px solid rosybrown">
+        <h1>제목</h1>
+        <p>내용작성</p>
+    </div>
+
+    <hr>
+    <h1>인라인 타입의 태그</h1>
+    <span style="background-color: yellow;">span은 인라인타입의 태그입니다</span>
+    <a href ="" style="background-color: orange;">a태그는 인라인타입의 태그</a>
+    <img src="" alt="이미지파일" style="border: 3px solid black;"
+
+    <hr>
+    <h1>디스플레이 속성바꾸기</h1>
+    <!-- 전체 크기에 이미지를 넣는게 아니라 블럭  안에 맞춰서 넣고싶음 ( 블럭 속성을 인라인 속성으로 변경) -->
+    <!-- 그래서 display:inline-block으로 지정해 변경 -->
+    <div style="border:3px solid black; display:inline-block;">
+        <img src="../IMAGE/woman.jpg" alt ="" width="150">
+        <img src="../IMAGE/woman.jpg" alt ="" width="150">
+    </div>
+
+    <p>
+        style의 display속성을 이용해서 원하는 속성으로 바꿀 수 있음 
+        div에서 display 속성으로는 inline-block을 많이 사용함 
+        style에서 크기 값을 적을 때는 반드시 단위 기호를 사용해야 한다. e.g. width:""
+    </p>
+
+    <hr>
+    <h1>iframe을 이용한 페이지분할</h1>
+    <p>
+        <a href="./HTML텍스트실습.html" target="textIframe">텍스트요소실습</a>
+     <!-- 텍스트요소로 이동하는 링크 작성 -->
+        <a href="./HTML텍스트요소.html" target="testIframe">텍스트요소실습1</a>
+    </p>
+           <iframe src="./HTML텍스트요소.html" target="testIIframe" style="width:300%;">텍스트요소 실습</iframe>
+            <!-- 소스파일 안에 관련된 내용을 작성하면 내용을 들고와서 보여줄 수 있음 -->
+
+    <!-- 블록과 인라인 실습= -->
+
+    <div style="background-color:lightyellow; text-align:center;">
+        <h1>안내문</h1>
+        <p>안내사항입니다</p>
+    </div>
+
+    <div style="background-color:lightblue; border:2px solid black; width:200px">
+        <h1>사용할 언어</h1>
+        <ul>
+           <li>HTML</li>
+           <li>CSS</li>
+           <li>JavaScript</li>
+        </ul>
+    </div>
+</body>
+</html>

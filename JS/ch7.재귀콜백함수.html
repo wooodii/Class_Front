@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 재귀함수 - 자기자신을 부르는
+        function funcFor(n){
+            // 반복합니다가 if문 위로 올 경우 총 4번 출력하게 됨 
+            document.write(`<p>반복합니다</p>`);
+
+            if(n>0){
+                // n이 0보다 클 때 자기 자신 반복
+                // n이 무한반복되지 않도록 1씩 줄임
+                funcFor(n-1)
+            }else{
+                // n이 0일때 종료
+                return 0;
+            }
+        }
+        
+        funcFor(3)
+
+
+        // n까지 더하기 
+        function funcSum(n){
+            if(n>0){
+                //값을 더해줘야 함 
+                // n=0일 때, return 0
+                // n=1일때, return f(n-1) +n = 0 +1 // return 1 
+                // n=2, return f(n-1) +n =  return 1 + 2 // return 3
+                // n=3, return f(n-1) +n = f(2) = return 3 +3 // return 6
+                // 그래서 최종 리턴값은 6 b
+                return funcSum(n-1) +n;
+            }else {
+                // 값을 리턴
+                return 0;
+            }
+        }
+
+        document.write(funcSum(3));
+
+
+        document.write(`<br>`)
+
+        // 팩토리얼 함수 
+        function factorial(n) {
+            if(n==1){
+                return 1;
+            }else{
+                return factorial(n-1)*n;
+            }
+        }
+        document.write(factorial(1));
+        document.write(`<br>`)
+        document.write(factorial(5));
+        document.write(`<br>`)
+
+        // 팩토리얼2 
+        function fact(n){
+            let result =1;
+            
+            for(let i =n; i>=1; i--){
+                result = result *i;
+            }
+            return result;
+        }
+        document.write(fact(5));
+
+        // 콜백함수 
+        function callback() {
+            document.write(`<p>콜백함수입니다.</p>`)
+        }
+
+        // 함수 인수로 넣어줄 때 함수 이름만 사용
+        // 익명함수
+        setInterval(callback(), 1000);
+        // callback안에 ()실행할 함수가 없다면 실행하지 않음 
+
+        setInterval(function(){
+            document.write("<p>익명함수로 만든 콜백함수입니다.</p>")
+        }, 1500);
+
+
+        //setInterval을 사용해 화살표 함수로 만든 콜백함수입니다를 3초출력
+        setInterval(
+            ()=> {document.write("<p>화살표 함수로 만든 콜백함수입니다.</p>")},3000); 
+
+        // 내장함수 - 숫자
+        let id = setInterval(
+            // 익명함수로 감싸서 넣어야지만 clearInterval을 실행할 수 있음
+            ()=> documet.write("<p>안녕하세요</p>"),2000
+        )
+
+        // id값을 통해서 특정 시간에 멈추기
+        setTimeout(
+            // 콜백 함수를 넣어야 하기 때문에, 익명 함수 or 함수의 이름을 넣어야 함 
+            // 함수이름(); 을 하면 함수가 바로 호출되어 실행
+            clearInterval(id),100);
+
+                        
+            // 내장함수 실습 
+            function printYear() {
+                let age = prompt("나이를 입력하세요");
+                let intAge = parseInt(age);
+                console.log("태어난 년도는"+(2022-intAge+1))
+            }
+
+            printYear(age);
+
+            // 메세기자 계속 바뀔 수 있도록 
+            function printYear(message) {
+                let age  = prompt(message)
+                let intAge = parseInt(age );
+
+                console.log("태어난 년도는"+(2022-intAge+1))
+            }
+            // print를 밖으로 빼서 메세지 수정가능하도록 
+            printYear("나이를 입력하세요");
+
+    </script>
+</body>
+</html>

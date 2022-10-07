@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>form의 input 타입</h1>
+    <h3>텍스트 입력과 비밀번호 입력</h3>
+    <input type="text" name="search" autofocus>    
+    <!-- 자동으로 input에 autofocus를 맞축 수 있도록 설정가능  -->
+    <br>
+    <input type="password" name="password"> 
+
+    <h3>라디오버튼</h3>
+    <input type="radio" name="lecture" value ="html"> HTML <br>
+    <input type="radio" name="lecture" value ="css"> CSS <br>
+    <input type="radio" name="lecture" value ="java"> JAVA <br>
+    <input type="radio" name="lecture" value ="cpp"> C++ <br>
+    <input type="radio" name="lecture" value ="typescript"> Typescript <br>
+    <input type="radio" name="check" value ="check"> 확인
+
+    <p> radio 타입은 name으로 묶어서 원하는 값을 하나만 선택함 
+        value 값을 통해서 서버로 값을 전달 
+        화면에 표시되는 것은 라디오버튼 뿐이기에 뒤에 텍스트로 표기해야 함
+    </p>
+
+    <h3>체크박스</h3>
+    <input type="checkbox" name="lectures" value ="html"> HTML <br>
+    <input type="checkbox" name="lectures" value ="css"> CSS <br>
+    <input type="checkbox" name="lectures" value ="java"> JAVA <br>
+    <input type="checkbox" name="lectures" value ="cpp"> C++ <br>
+
+
+    <h3>파일선택</h3>
+    <input type = "file" accept =" image/*"> 이미지 파일선택
+
+
+    <hr>
+    <h3>선택입력 -selected</h3>
+    <select name="fruit">
+        <option value ="oranged" selected> 귤</option>
+        <option value ="strawberry"> 딸기</option>
+        <option value ="apple"> 사과</option>
+        <option value ="peach"> 복숭아</option>
+    </select>
+
+    <hr>
+    <h3>textarea</h3>
+    <textarea name="message" cols="30" rows ="5"> 값을 넣었습니다</textarea>
+
+    <hr>
+    <h3>버튼</h3>
+    <button type="button" onlick="alert('버튼을 클릭하셨군요!')">버튼을 눌러주세요</button>
+
+    <hr>
+    <h3>전송 버튼</h3>
+    <!-- input버튼을 통해서 버튼을 만들 수 있음 -->
+    <input type="submit" value="제출">
+    <!-- form과 함께 쓰는 input button -->
+    <form action="" method="get">
+        <label for="">이름을 작성해주세요</label><br>
+        <input type="text" name="name">
+        <!-- 이름을 작성하면 주소창에 작성한 이름이 기입됨 -->
+        <input type="submit" value="제출">
+        
+        <button type="submit">제출</button>
+        <!-- button으로 작성해도 같은 결과가 나옴  -->
+    </form>
+    <p>
+        type submit은 form에 작성된 value값을 서버에 전달할 때 사용함
+        value값을 전달할 때에는 name의 이름을 담아서 전달함
+        form의 메소드 get은 주소를 통해서 값을 전달함
+        ? name = value의 형태로 주소창에 등장함  
+    </p>
+
+
+    <hr>
+    <fieldset>
+        <legend>입력 양식</legend>
+        이름을 입력하세요
+        <input type="text">
+        <input type="submit" value="전송">
+        <!--  submit은 form안에서만 form의 내용을 전송한다. -->
+    </fieldset>
+    
+
+    <hr>
+    <h1>로그인 페이지 입니다</h1>
+    <form style=border:2px solid black; type ="" method="get">
+        
+        
+        <table style="border:3px solid red;">
+            <tr>
+                <td>사용자 : </td>
+                <td><input type="text" name="id"></td>
+                <td rowspan="2">
+                    <input type="submit" value="전송">
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호 : </td>
+                <td><input type="password" name="pw"></td>
+            </tr>
+        </table>
+
+        <hr>
+        <!-- 정렬되지 않은 실습 -->
+        <table>
+            <div style="border :3px solid black; display:inline-block">
+            <label for="">사용자 : </label>
+            <input type="text" name=""> <br>
+            <label for="">비밀번호 : </label>
+            <input type="password" name="">
+            <input type="submit" value="전송">
+            </div>
+        </table>
+    </form>
+        <a href="">비밀번호를 잊어버렸나요?</a>
+
+
+
+        <hr>
+        <h1>설문조사</h1>
+
+        <p>성별을 체크해주세요</p>
+        <input type="radio" name="gender" value="남">남
+        <input type="radio" name="gender" value="여">여<br>
+
+        <p>음식을 선택해주세요</p>
+        <input type="checkbox" name="food" value="한식"> 한식 <br>
+        <input type="checkbox" name="food" value="일식"> 일식 <br>
+        <input type="checkbox" name="food" value="중식"> 중식 <br>
+        <input type="checkbox" name="food" value="양식"> 양식 <br>
+        <p>기타의견을 남겨주세요</p>
+        <textarea name="message" id="" cols="30" rows="10"></textarea>
+        
+</body>
+</html>

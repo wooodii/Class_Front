@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id =userYear placeholder="출생년도를 입력하세요">
+    <button type="button" id =ageBtn>제출</button>
+    
+    <p id="result"> <span></span> 세 입니다.</p> 
+
+    <script>
+        document.querySelector('#ageBtn').addEventListener('click', function(){
+            const birthYear = document.querySelector('#userYear').value;
+            
+            const today = new Date();
+            const nowYear = today.getFullYear();
+            const age = nowYear - birthYear +1;
+           document.querySelector("#result span").innerText = age;
+        })
+    </script>
+    
+</body>
+</html>

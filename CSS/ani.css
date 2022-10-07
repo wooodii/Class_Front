@@ -1,0 +1,125 @@
+.ani {
+    border :3px solid rosybrown;
+    animation : ani 3s;
+}
+
+@keyframes ani {
+    from {
+        margin-left :100%; 
+    }
+    to{
+        margin-left:0%; 
+    }
+}
+
+.ani-hover:hover {
+    from {
+        margin-right : 100%;
+    }
+    to{
+        margin-right :0%
+    }
+}
+.ani-hover:hover {
+    animation :animationHober 3s;
+}
+
+@keyframes animationHober{
+    from {margin-left : 0;}
+    to{margin-left : 100%;}
+}
+
+.ani-border {
+    border : red 3px solid;
+    animation: anyborder 10s;}
+
+@keyframes anyborder {
+    0% {
+        border-color : red;
+    }
+    30%{
+        border-color : orange;
+    }
+    60%{
+        border-color : yellow;
+    }
+    100%{
+        border-color : green;
+    }
+
+}
+
+.a-box {
+    display:inline-block;
+    background-color: seashell;
+    width:200px;
+    height:200px;
+}
+
+.ani-count {
+    animation :rotation  2s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes rotation{
+    0% {
+        transform:rotate(0deg) translateY(0px);
+    }50% {
+        transform:rotate(270deg) translateY(50px);
+    }100%{
+        transform:rotate(360deg) translateY(0px);
+    }
+}
+
+.ani-direction:hover {
+    animation:animation 3s;
+    animation-direction:reverse
+}
+
+.rotate {
+    background-color:pink;
+    border : 2px solid pink; 리
+    width :200px;
+    height:200px;
+}
+
+.rotate {
+    animation : rotational 8s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+.rotate p {
+    font-size : 1.5em;
+text-align: center ;
+padding:70px 0 ;
+color:white;
+}
+
+@keyframes rotational {
+    0% {
+        transform:rotate(0deg);
+    }25% {
+        transform:rotate(90deg);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 0%;
+        border-bottom-left-radius:0%;
+        border-bottom-right-radius:0%;
+    }50% {
+        transform:rotate(180deg);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius:0%;
+        border-bottom-right-radius:0%;
+        
+    }75%{
+        transform:rotate(270deg) ;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius :0%;
+        border-bottom-right-radius:50%;
+    }100%{
+        transform:rotate(360deg);
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas"width="200" height="100" style="border : 1px solid #000000;"></canvas>
+
+    <script>
+        // 자바스크립트 오류 확인은 브라우저에서 가능하며 
+        // 자바스크립트의 브라우저 환경에서 실행되기 때문에
+        // html파일에서 작성할 때는 오류를 확인할 수 없음
+        // html에서 id값을 통해서 요소를 가져옴
+        let paper = document.getElementById("mycanvas");
+        let context = paper.getContext("2d");
+
+        //context를 통해서 그림을 그릴 수 있음 
+        
+        context.fillStyle = "#ff0000";
+        context.fillRect(0,0,150,75);
+
+
+        //선을 그리기 위한 자바스크립트
+        context.strokeStyle="#00ff00";
+        context.moveTo(0,0);
+        context.lineTo(200,100);
+        contex.stroke();
+
+        // 원을 그리는 방법
+        context.beginPath(); // path를 먼저 시작하는 것을알림 
+        context.arc(95,50,40,0,2*Math.PI);  // 원의 path 지정 
+        context.stroke(); // stroke로 선 그리기
+        context.arc()
+
+        //글자 작성 방법
+        context.font="30px Arial";
+        context.fillText("Hello World",10,50);
+        context.strokeText("Hello World",10,50);
+
+        // 그라디언트 적용하기 
+        // 그라디언트 생성 
+        let grd= context.createRadialGradient(75,50,5,90,60,10);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+        // 그라디언트 사용 
+        context.fillStyle = grd;
+        context.fillRect(20,20,150,80); 
+
+        grd2.addColorStop(0,"blue");
+        grd2.addColorStop(1, "yellow");
+</script>
+
+
+       // 실습 
+       <canvas id ="mycanvas" width ="300" height="250" style="border :1px solid black"></canvas>
+
+       <script>
+
+        // 그라디언트 작성하기 
+        let paper = document.getElementById("mycanvas");
+        let context = paper.getContext("2d");
+        
+        let grd = context.createLinearGradient(0,0,200,0);
+        grd.addColorStop(0,"blue");
+        grd.addColorStop(1,"white");
+        
+        context.fillStyle = grd;
+        context.fillRect(10, 10,200,150);
+        
+        //CANVAS 입력하기 
+        context.fillStyle = "white";
+        context.font="30px Arial";
+        // 현재 설치되어 있는 글꼴을 화면에 출력해줄 수 있음 
+        // 제어판 - 글꼴을 확인해 화면에 출력하도록 입력 
+        context.fillText("CANVAS, 20, 50");
+
+
+        </script>
+    
+
+</body>
+</html>

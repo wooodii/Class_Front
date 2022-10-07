@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./플로트속성연습.css">
+    <title>플로트 속성 연습</title>
+</head>
+<body>
+    <h1>float</h1>
+    <img src="./img/img.jpg" width="300px" alt="이미지" 
+        style="float: left;"
+    >
+    <p>이미지가 존재합니다</p>
+    <p  style="float: right;">이미지가 존재합니다</p>
+    <p>이미지가 존재합니다</p>
+    <p>이미지가 존재합니다</p>
+    <p style="clear:both;">이미지가 존재합니다</p>
+    <p>이미지가 존재합니다</p>
+
+    <h1>float속성 - 레이아웃</h1>
+    <div class="header">
+        <p>헤더영역</p>
+    </div>
+    <div class="nav">
+        <p>네브 영역</p>
+    </div>
+    <div class="section">
+        <p>섹션영역</p>
+    </div>
+<hr>
+    <h1>플로트속성실습</h1>
+    <div class="m-box">연습을 위해 만든 div입니다.</div>
+    <div class="float-box">여기에 float:left가 적용이 되어있습니다.</div>
+    <div class="m-box">이 div는 float의 영향을 받아 옆에 배치되게 됩니다.</div>
+
+    <h2 class="float-clear">div로 float설정할 때 주의해야 할 점</h2>
+    <p>
+        display:block이기 때문에 float요소로 정렬할 때 
+        요소 자체가 정렬되는게 아니라 안에 있는 값 or요소가 정렬됨 
+        * 요소시작위치는 그대로(너비에서 차이가 남) -> 마진을 통해 공간 띄워서 해결 <br>
+            or display:inline-block 사용가능(한줄을 다 차지하지 않기에 다른곳에 자유롭게 위치하는 부분 고려)
+    </p>
+
+    <h1>overflow 속성 확인</h1>
+    <div class="m-box">
+        <div class ="float-box">float 속성이 적용된 div</div>
+        <p>내용이 길어 오버플로우 속성을 확인하는 p태그</p>
+        <p></p>
+    </div>
+</body>
+</html>

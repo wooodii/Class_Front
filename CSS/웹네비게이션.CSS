@@ -1,0 +1,42 @@
+li {
+    list-style: none;
+}
+a{
+    text-decoration:none;
+    color:white; 
+}
+
+ul{
+    margin : 0;
+    padding-inline-start: 0;
+    text-align: center;
+}
+
+.gnb {
+    display:inline-block;
+    width:100%;
+    background-color:rgb(100, 100, 179);
+}
+.gnb > ul > li {
+    float :left;
+    padding: 5px 10px;
+}
+
+.g-sub >li {
+    padding : 5px 0; 
+}
+.g-sub {
+    display:none;
+    position : absolute;
+    background-color :rgb(100,120,134);
+    margin-left:-10px;
+    padding:10px;
+}
+
+.gnb > ul > li:hover, .g-sub > li:hover{
+    background-color:darkgrey;
+}
+/* 앞쪽은 위치, 뒤쪽이 영향받는 요소 .g-sub */
+.gnb > ul > li:hover .g-sub{
+    display: block;
+}

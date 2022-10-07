@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //array객체 
+        let number = [1,2,3,4,5];
+        let sliceNumber = number.slice(3);
+        console.log(sliceNumber)
+
+        //splice : 원하는 위치에 있는 값을 삭제 가능 
+        number.splice;
+        console.log(number);
+        
+        number.reverse() // 뒤집기 
+        console.log(number); 
+
+        number.sort(); // 정렬
+        console.log(number);
+
+        // foreach : 배열안에 있는 값을 함수를 통해서 반복하는 함수 
+        number.forEach(function (item, index){console.log(item)});
+        
+        // filter : 배열의 콜백함수를 통해서 return 값이 true이면 요소값을 return하여
+        //  새로운 배열을 만듦
+    //     let fileterNumber = number.filter(function (item,index){return item>3})
+    //     console.log(filterNumber)
+
+    //     let NumArray  = [3,5,1,7,3,1]
+    //     NumArray.sort()
+    //     console.log(NumArray)
+
+    //     let flowerArray = ['튤립','장미', '국화']
+    //     console.log (flowerArray.pop())
+    //     console.log (flowerArray.pop())
+    //     console.log (flowerArray.pop())
+
+    //     //string 객체 : 문자열의 정보를 가져오는 메서드
+
+
+    //     //이름의 가운데 글자 *로 바꿔넣기 
+    //     let name = "나나나난나나나";
+    //     let center = name.charAt(3)
+    //     let replace = name.replace("난", "*")
+    //     console.log(replace)
+
+    //     // 글자를 잘라서 넣는 방법
+    //     // for 첫글자와 마지막 글자를 제외하고 전부 *로 넣기 
+    //     for(let i =0;  i<name.length; i++){
+    //         console.log(name.charAt(i)) // 한글자씩 잘라서 출력
+    // }
+
+        // date
+        // let today = new Date(); // 실행된 날짜 시간을 가져옴 
+        // console.log(today.getDate())
+        // concole.log(today.getTime()) // 값 두개를 빼서 걸린 시간 확인 
+        // console.log(today.getSeconds())
+        
+        // let startTime = today.getTime()
+        // for(let i =0; i <100; i++) {
+        //     document.write(i);
+        // }
+
+        // let day = new Date();
+        // let endTime = day.getTime();
+        // console.log("걸린시간"+(endTime-startTime))
+
+        
+        // date 객체 실습 
+        let day = new Date();
+        
+        console.log(day.getHours()+"시");
+        console.log(day.getMinutes()+"분");
+        console.log(day.getSeconds()+"초");
+
+        // Math
+        let randomNum = Math.floor((Math.random()*10)+1);
+        console.log(randomNum)
+        
+        // Math 객체 실습 
+        console.log(Math.round(3*3*Math.PI))
+
+        // NUMBER 객체
+        // 래퍼 객체 : number, string 의 원시 자료형을 임시로 객체로 만드는 것 
+        // 생성된 임시 객체는 참조가 끝나면 객체의 기능이 소멸됨 
+        
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="radio">
+        <input type="radio" name="gender" value="woman">여성
+        <input type="radio" name="gender" value="man">남성
+    </div>
+
+    
+    <ul id="btn-list">
+        <li><button>1</button></li>
+        <li><button>2</button></li>
+        <li><button>3</button></li>
+    </ul>
+
+    <button id="add-a">링크가 추가됩니다. </button>
+    <ul id="a-list">
+        <li><a href="">임의로 만든 링크 </a></li>
+    </ul>
+
+    <!-- 키보드이벤트 -->
+    <input type="text" id="keyinput">
+
+    <p id="keytext"></p>
+
+
+    <textarea id="select-event">선택한 부분을 바꿔줄 수 있습니다.</textarea>
+
+    <script>
+        // 배열에서 사용할 수 있음 , addeventlistener 사용 불가능 
+        // 배열의 forEach를 사용하거나 for문을 사용해서 이벤트 리스너를 붙여준다.
+        document.querySelectorAll("#radio-group input").forEach(
+            function(e){
+                e.addEventListener("click", getValue)
+            }
+        )
+
+        // 선택자 통한 접근
+        // 객체가 여러개 들어와도 객체마다 함수가 각각 적용될 수 있음 
+        $("radio-group input:first").on("click", getValue);
+        function getValue(){
+            // $(this) 현재 실행되는 요소 
+            console.log($(this).val());
+        }
+
+
+        // 하나의 요소에 여러개의 이벤트와 함수를 연결 > .on
+        $('#btn').on({
+            mouseenter:function() {
+                $('#text').append("마우스가 마우스 버튼 위에 있습니다 <br>");
+            },
+            click:function() {
+                $('#text').append("마우스를 클릭했습니다 <br>"); 
+            },
+            mouseleave:function(){
+                $('#text').append("마우스를 빠져나갔습니다 <br>"); 
+            }
+        })
+
+        // 이벤트 이름을 띄워쓰기로 함께 넣어주면 이벤트가 동시 발생한다 
+        $("#btn").on({ "click mouseenter mouseleave", function() {$("#text").append("이벤트가 발생했습니다 <br>");}
+        })
+
+        // 제이쿼리의 one 메소드 
+        $("#btn3").one("click", function (){
+            $("#text3").append("첫번재로 클릭했습니다");
+        })
+
+
+        $("btn3").on("click", function(){
+            $("#text3").append("이미 클릭된 버튼");
+        })
+        // one메소드의 click 이벤트가 한번 실행된 후 실행되게 하기 위함 
+
+        
+        $("#btn-list li button").on("click", function() {
+        $(this).attr("style","background-color : blue");
+        });// attr을 이용해 속성값을 가져와줄 때, 속성이름을 적어줘야 함 
+
+
+        
+
+        // 이벤트 위임 : 부모요소에서 자식요소에게 이벤트 연결
+        // 안에 a라는 이벤트 요소가 추가되얻 ㅗ추가된 요소에 이벤트를 넘겨줄 수 있음 
+        $("#a-list").on('click',"a", function(){
+                console.log("이벤트를 실행했습니다");
+        })
+
+        $("#add-a").on("click", function (){
+            $("a-list").append("<li><a>추가된 링크</a></li>")
+        })
+
+        // 키보드 이벤트 : keypress 
+        // 숫자, 백틱, 영어값이 나오는 것을 볼 수 있음
+        $("#keyinput").on("keypress",function(e){
+            $("#keytext").html(e.key)
+        })
+
+        // 키보드이벤트 : keydown (tab,shifty키도 가능)
+        $("body").keydown(function(e)){
+            $("keytext").html(e.key);
+        }
+
+        // 입력창에서 선택
+        $("#select-event").select(function() {
+            $(this).attr("style", "background-color:black; color:white;")
+        })
+
+       
+    </script>
+</body>
+</html>

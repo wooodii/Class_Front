@@ -1,0 +1,185 @@
+/* 자손선택자 접근 = */
+.parents p {
+    background-color :yellow;
+}
+
+/* 자식선택자 >기호를 이용해 바로 아래의 자식 선택자만사용 */
+.parents > p {
+    border:3px solid red;
+}
+    
+/* 일반 동위 선택자 */
+/* 해당p 태그와 인접한 p 태그를찾음 */
+/* 해당 클래스를 p 자식선택자로 옮기고 ~p만 입력할 경우 가능 */
+.m-silbing ~ p {
+    background-color: blueviolet;
+}
+
+/* 인접 동위 선택자   +p */
+/*바로 뒤에 있는 디자인 요소를 바꾸고 싶을 때  */
+.m-silbing +p {
+background-color:chocolate; 
+}
+
+
+.test-ul li {
+    float:left;
+    padding:0 20px;
+    list-style-type: none;
+    border-right:3px solid black;
+}
+
+
+.test-ul, .last-li +li{
+    border:none;
+}
+
+/* a 태그에 걸 수 있는 동적의사클래스 */
+a:link {
+    color:red;
+}
+a:visited{
+    color:rgb(160, 160, 161);
+}
+
+a:hover{
+    color:yellowgreen;
+}
+/* 클릭 상태를 확인 */
+a:active {
+    color: green;
+}
+
+.focus-input:focus {
+background-color:slategray;
+}
+
+ol > li {
+    background-color: beige;
+}
+.ul{
+    font-weight:bold;
+    background-color:red;
+}
+
+.ol{
+    background-color:aquamarine; 
+}
+
+/* 포커스를 가질 수 있는 요소에 사용하는 동적인 클래스*/
+.bold:focus{
+    background-color: red;    
+}
+
+/* 체크 상태일 때, 바로 뒤에 있는 span 태그의 배경을 변화 */
+.checked-box:checked + span {background-color: red;}
+
+/* disabled상태일 때, 바로 뒤에 있는 span태그의 글자색을 바꾼다 */
+.disabled-box :disabled +span {color:gray}
+
+.enabled-box:enabled +span {color:darkblue;}
+
+/* 구조의사 클래스 */
+.table-child {
+    border-collapse: collapse;
+}
+.table-child tr:first-child {
+    background-color:aqua;
+}
+
+/* tr중에서 td의 첫번째 내용 */
+.table-child tr td:first-child {
+    background-color:goldenrod;
+}
+
+.table-child tr:nth-child(2){
+    background-color:darkmagenta;
+}
+
+.li-background li:nth-child(2n) {
+    background-color: brown;
+}
+
+.of-type li:first-of-type {
+    background-color: aqua;
+}
+/* 의사 요소 */
+/* 띄어쓰기 없이 붙여서 써야 함*/
+.first-letter::first-letter{
+    font-size:2em; 
+}
+
+.first-letter::first-line{
+    color:darkorchid; 
+}
+
+.before::before{
+    content:글자;
+}
+
+.before::before {
+    /* before를 이용해서 앞에 들어가는 내용 */
+    content: "글자";
+    /* 컨텐츠 안에 들어가는 내용을 꾸밈 */
+    color:blue;
+    background-color: yellow;
+    padding:10px;
+}
+
+.after::after{
+    /* 컨텐츠에 아무 내용이 없을 때는 display값을 inline-block으로 
+    두어서 크기를 설정한다.  */
+    content : "";
+    background : darkorchid;
+    display : inline-block;
+    width:30px;
+    height:30px ;
+    border-radius: 50%;
+}
+
+.selection::selection {
+    background-color : black;
+    color:white; 
+}
+input[type] + span {
+    background-color:blue;
+}
+
+p[type ="button"] {
+    /* 취소선 추가 */
+    text-decoration: line-through;
+}
+p[type ="radio"] {
+    /* 취소선 추가 */
+    color: blue;
+}
+
+/* 의사클래스 */
+/* not의사클래스는 앞에 요소를 붙여 지정하지 않고
+괄호 안에 제외할 태그나 선택자를 입력한다. */
+/* 기본적으로 body에 있는 모든 글자가 보라색으로 적용됨 */
+body:not(p) {
+    color:blueviolet;
+}
+
+.not :not(p) {
+    color: cadetblue;
+}
+
+
+.color{
+    color:orange;
+}
+
+h1.color{
+    color:orchid;
+}
+
+/* css선택자 실습 */
+.tabled {
+    border : 2px solid red;
+}
+
+.table:nth-child(1) {
+    text-align :center;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // while문 
+    // 값을 받아와서 반복하는 while
+    let word =prompt("나무를 영어로 입력");
+    while(word!="tree"){
+        word = prompt("다시 입력 ");
+    }
+    document.wirte("ok");
+</script>
+<script>
+    let num = prompt("10+10?");
+        while ( num != "20") {
+            num = prompt("10+10?");
+        }
+        alert("정답입니다");
+
+
+    // 0이 입력될때까지 숫자를 다 더하는 while문
+    let number = prompt("0을 입력하면 입력한 모든 수를 더합니다");
+    let sum = 0;
+    while (number != "0") {
+        if ( !isNaN( Number(number) ) ) {
+        sum += Number(number);
+        }
+        number = prompt("0을 입력하면 입력한 모든 수를 더합니다");
+        }
+        alert(sum)
+
+        // do while
+        // 지정된 비밀번호를 맞출 때 까지 출력 
+    let pw = 'green';
+    let count = 0;
+    let user;
+    do {
+        user=prompt("비밀번호를 입력하세요")
+        count++;
+    }while(pw !=user)
+    alert(count+"회 시도하였습니다.")
+
+        //break
+    let c =0; 
+    while(true){
+        document.write("무한반복중입니다")
+        c++;
+        if(c<10){
+            break;
+        }
+    }
+
+
+    // continue 
+    for( let i = 1; i<=10; i++){
+        if(i %2==1){ // 홀수만 제외하고 출력
+            continue;
+            // 다시 for문으로 올라가서 다음 내용 실행 
+        }
+        document.write(`<p>${i}</p>`)
+    }
+
+    //break, continue 실습
+    let  number1 = 0;
+    while(number1>10){
+        break;
+    }document.write(number1);
+    number1++;
+
+    for(let i =1; i<=10; i++){
+        if(i%3==0){
+            continue;
+        }
+        document.write(`<p>${i}</p>`)
+    }
+
+    
+    </script>
+</body>
+</html>
