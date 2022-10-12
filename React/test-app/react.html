@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <style>
+        .react-style {
+            font-weight: bold;
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <!-- root라는 하나의 돔만 가져와서 myApp이라는 함수를 통해 태그를 만들어 출력 -->
+    <!-- 나머지는 함수 단위로 가져와 가상 dom을 만든 후에 render로 연결 -->
+    <div id = "root"></div>
+
+    <script type="text/babel">
+        function MyApp() {
+
+        const name = 'React';
+        const count = 1;
+        const ctt = undefined; 
+        const style= {
+            backgroundColor : "black",
+            color : "white"
+        }
+            // return을 통해서 HTML 화면 출력 
+            // 태그를 여러개 사용할 때 부모태그로 감싸서 사용
+            // {}를 이용해 변수, 자바스크립트 표현을 사용할 수 있음
+            return (
+                <div>
+                    <h1> Hello, {name} World! </h1>
+                    <p> 반갑습니다 </p>
+                    { name == 'React' ? 
+                    (<div>
+                        <h1>react입니다</h1>
+                        <p> name값 : {name} </p>     
+                    </div>)
+                    : 
+                    ( <div>
+                        <h1>react가 아닙니다</h1>
+                        <p> 잘못된 name 값입니다.</p>
+                    </div>)}  
+
+
+                    {
+                    // jsx and(&&) 연산자 : 참일 때 출력 
+                    name == 'React' &&  <h1>리액트입니다</h1>
+                    }
+                    
+                    {
+                        // JSX or(||) 연산자 : 거짓일 때 출력 
+                        ctt || <h1> undefined </h1>                        
+                    }
+
+                    <p style={style}> 인라인 스타일이 적용된 모습</p>
+                {/*className으로 스타일 적용가능*/}
+                    <p className= 'react-style'> css파일로 작성한 클래스 적용</p>
+                    <p className ="style-react">react</p>
+                </div>
+            );
+        }
+        // HTML의 root 요소를 찾아 그 곳에 가상 DOM을 렌더함 
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+</html>

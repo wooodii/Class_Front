@@ -95,7 +95,7 @@
             // 메뉴 아이디와 이름이 같은지 확인하지 않고 출력
             for(let i = nextCount; i <nextCount+10 ; i++) {
                 let count = 0;
-                for(let j = i ; j<1000 ;j++) {
+                for(let j = i ; j<1000 ;i++) {
                     if (menuData.body[j].MENU_ID == data.body[i].MENU_ID) {
                         count = j;
                         break;
@@ -106,7 +106,6 @@
                         menuData.body[count].RSTR_NM);
             }
 
-            // ~ 4시50분까지
             // 메뉴 10개 출력하기
             // 메뉴 10개를 출력했다면) 다음 버튼을 누르면 다른 메뉴 출력되게 하기
 
