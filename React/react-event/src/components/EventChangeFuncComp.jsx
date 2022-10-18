@@ -49,8 +49,7 @@ const EventChangeFuncComp = () => {
         <div>
             {/** h1태그에 input으로 작성한 내용 출력하기 */}
             <h1>글을 입력하세요</h1>
-            {/* 이벤트를 통해 VALUE 값을 가져와 만들 때에는 onchange이용해 
-             값을 가져와서 변경하면 끝*/}
+            {/* 이벤트를 통해 VALUE 값을 가져와 만들 때에는 onchange로 값을 가져와서 변경하면 끝*/}
             <input type="text" name="message" onChange={ onchange } />
             <p>{message.message}</p>
             <input type="text" name="name" onChange={ onchange } />

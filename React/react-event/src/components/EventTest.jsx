@@ -1,5 +1,10 @@
 // 클래스형 컴포넌트
 // 컴포넌트 안에 컴포넌트를 사용
+// 데이터를 사용하는 방식
+// prop = 데이터를 받아오는 값,  state 함수 내부, 자체에서 사용하는 방식 
+// 각각의 component가 가지고 있거나 부모 컴포넌트가 전달하는 방식으로 사용 
+// 현재는, 데이터를 사용할 때 자식 컴포넌트 값을 부모로 올라가 확인하는 것이 어려움 
+
 import EventTestLoginForm from "./EventTestLoginForm";
 import { Component } from "react";
 
