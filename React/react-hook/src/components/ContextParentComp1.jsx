@@ -25,7 +25,9 @@ const ContextParentComp1 = () => {
 
     return ( 
         <div>
-            {/** 2에서 만든 CountCountext를 provider를 이용해 상태값을 전달  */}
+            {/** 2에서 만든 CountCountext를 provider를 이용해 상태값을 전달  
+             * props값으로 넘겼던 것을 context로 넘겨받음 
+            */}
             <CountContext.Provider value={ {state:state, dispatch: dispatch} }>
                 <ContextChildrenComp3 />
             </CountContext.Provider>
