@@ -12,5 +12,5 @@ const TodoItemComp = (props) => {
     </li>
      );
 }
-//context로도 수정
+//context로도 수정 
 export default TodoItemComp;
